@@ -1,0 +1,24 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+  <configure zcml:condition="installed AccessControl.security">
+  <!-- -*- extra stuff goes here -*- -->
+
+    <permission
+        id="collective.playlist.AddPlaylist"
+        title="collective.playlist: Add Playlist"
+    />
+
+        
+    <permission
+        id="collective.playlist.AddTrack"
+        title="collective.playlist: Add Track"
+    />
+
+        
+
+  </configure>
+
+</configure>

@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-01-18 09:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../content/track.py:19
+msgid "Audio"
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+#: ../profiles/default/types/track.xml
+msgid "Edit"
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "Installs the collective.playlist add-on."
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+msgid "Playlist"
+msgstr ""
+
+#: ../profiles/default/types/track.xml
+msgid "Track"
+msgstr ""
+
+#: ../configure.zcml:38
+msgid "Uninstalls the collective.playlist add-on."
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+#: ../profiles/default/types/track.xml
+msgid "View"
+msgstr ""
+
+#: ../configure.zcml:29
+msgid "collective.playlist"
+msgstr ""
+
+#: ../configure.zcml:38
+msgid "collective.playlist (uninstall)"
+msgstr ""
+
+#: ../content/track.py:20
+msgid "mp3, etc."
+msgstr ""

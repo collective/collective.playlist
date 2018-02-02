@@ -1,0 +1,3 @@
+<div id="playerviewlet" tal:condition="view/show">
+    <span><a href="./playlist-mocoloco" tal:attributes="href view/href">PLAY&gt;</a></span>
+</div>

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title tal:content="context/Title|nothing">Playlist</title>
+    </head>
+    <body>
+        
+        <h3 tal:content="context/Title|nothing">Playlist</h3>
+        
+        <ul class="admin_add_and_edit" tal:condition="view/can_add_and_edit">
+            <li><a href="/">home</a></li>
+            <li><a href="edit" tal:attributes="href string:${context/absolute_url}/edit">edit</a></li>
+            <li><a href="++add++track" tal:attributes="href string:${context/absolute_url}/++add++track">add track</a></li>
+        </ul>
+             
+        <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
+
+        <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
+        	<div class="jp-type-playlist">
+        
+                <div class="jp-gui jp-interface">
+                    <div class="jp-controls">
+                        <a class="jp-previous"><i class="fa fa-backward"></i></a>
+                        <a class="jp-play"><i class="fa fa-play"></i></a>
+                        <a class="jp-pause"><i class="fa fa-pause"></i></a>
+                        <a class="jp-stop"><i class="fa fa-stop"></i></a>
+                        <a class="jp-next"><i class="fa fa-forward"></i></a>
+                    </div>
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-volume-controls">
+                        <a class="jp-mute"><i class="fa fa-volume-off"></i></a>
+                        <a class="jp-volume-max"><i class="fa fa-volume-up"></i></a>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                    </div>
+                    <div class="jp-time-holder">
+                        <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                        <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                    </div>
+                </div>
+        
+
+        		<div class="jp-playlist">
+        			<ul>
+        				<li>&nbsp;</li>
+        			</ul>
+        		</div>
+        		<div class="jp-no-solution">
+        			<span>Update Required</span>
+        			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        		</div>
+        	</div>
+        </div>
+
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/jplayer-flat-audio-theme.css" />
+        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css" />
+
+
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+        <script type="text/javascript" src="++resource++collective.playlist/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="++resource++collective.playlist/jplayer.playlist.min.js"></script>
+        <!-- <script type="text/javascript" src="++resource++collective.playlist/collectiveplaylist.js"></script> -->
+        <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
+    </body>
+</html>
