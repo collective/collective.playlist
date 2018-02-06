@@ -1,4 +1,3 @@
-.DS_Store
 .coverage
 *.egg-info
 *.log
@@ -26,6 +25,7 @@ log.html
 output.xml
 pip-selfcheck.json
 report.html
+.DS_Store
 # excludes
 !.coveragerc
 !.editorconfig
