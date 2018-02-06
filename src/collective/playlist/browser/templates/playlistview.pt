@@ -3,8 +3,19 @@
         <title tal:content="context/Title|nothing">Playlist</title>
     </head>
     <body>
+        <header>
+            <div>
+                <a id="portal-logo" href="/" target="_blank">
+                    <img class="" src="/logo.png" alt="Plone site" title="Plone site"
+                        tal:attributes="title context/Title|nothing;
+                            alt context/Title|nothing;
+                            src view/getSiteLogo">
+                </a>
+            </div>
+
         
-        <h3 tal:content="context/Title|nothing">Playlist</h3>
+            <!-- <h3 tal:content="context/Title|nothing">Playlist</h3> -->
+        </header>
         
         <ul class="admin_add_and_edit" tal:condition="view/can_add_and_edit">
             <li><a href="/">home</a></li>
@@ -12,11 +23,12 @@
             <li><a href="++add++track" tal:attributes="href string:${context/absolute_url}/++add++track">add track</a></li>
         </ul>
              
+        
         <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
 
         <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
-        	<div class="jp-type-playlist">
-        
+            <div class="jp-type-playlist">
+
                 <div class="jp-gui jp-interface">
                     <div class="jp-controls">
                         <a class="jp-previous"><i class="fa fa-backward"></i></a>
@@ -42,18 +54,18 @@
                         <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
                     </div>
                 </div>
-        
 
-        		<div class="jp-playlist">
-        			<ul>
-        				<li>&nbsp;</li>
-        			</ul>
-        		</div>
-        		<div class="jp-no-solution">
-        			<span>Update Required</span>
-        			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-        		</div>
-        	</div>
+
+                <div class="jp-playlist">
+                    <ul>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="jp-no-solution">
+                    <span>Update Required</span>
+                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                </div>
+            </div>
         </div>
 
 
@@ -68,7 +80,6 @@
 			  crossorigin="anonymous"></script>
         <script type="text/javascript" src="++resource++collective.playlist/jquery.jplayer.min.js"></script>
         <script type="text/javascript" src="++resource++collective.playlist/jplayer.playlist.min.js"></script>
-        <!-- <script type="text/javascript" src="++resource++collective.playlist/collectiveplaylist.js"></script> -->
         <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
     </body>
 </html>

@@ -27,12 +27,10 @@ class PlaylistViewlet(base.ViewletBase):
     @ram.cache(lambda *args: time() // 60)
     def show(self):
         playlists = self._playlists()
-        # print "playlists", [item.id for item in playlists]
         return playlists!=[]
         
     @ram.cache(lambda *args: time() // 1)
     def href(self):
         result = self._playlists()[0].getObject().absolute_url()
-        print "url", result
         return result
         

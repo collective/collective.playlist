@@ -1,3 +1,8 @@
-<div id="playerviewlet" tal:condition="view/show">
-    <span><a href="./playlist-mocoloco" tal:attributes="href view/href">PLAY&gt;</a></span>
+<div id="playerviewlet" tal:condition="view/show">    
+    <a class="playlist-button" 
+        href="./playlist-mocoloco" 
+        target="_blank"
+        tal:attributes="href view/href">
+        <span class="glyphicon glyphicon-play-circle"></span>
+    </a>
 </div>

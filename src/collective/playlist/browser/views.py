@@ -1,8 +1,10 @@
-from plone.memoize.view import memoize
 from plone import api
+from plone.memoize.view import memoize
 from Products.CMFPlone.resources import add_resource_on_request
-
 from plone.dexterity.browser.view import DefaultView
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+from zope.component.hooks import getSite
 
 import logging
 logger = logging.getLogger(__name__)
@@ -46,7 +48,7 @@ class PlaylistView(DefaultView):
     ], {{
         volume: 1.0,
         playlistOptions: {{
-            autoPlay: false,}},
+            autoPlay: true,}},
         swfPath: "../../dist/jplayer",
         supplied: "oga, ogg, mp3, wav",
         wmode: "window",
@@ -68,3 +70,19 @@ class PlaylistView(DefaultView):
         return result
         
         return True
+        
+    def getSiteLogo(self, site=None):
+        from Products.CMFPlone.interfaces import ISiteSchema
+        from plone.formwidget.namedfile.converter import b64decode_file
+        if site is None:
+            site = api.portal.get()
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ISiteSchema, prefix="plone", check=False)
+        site_url = site.absolute_url()
+
+        if getattr(settings, 'site_logo', False):
+            filename, data = b64decode_file(settings.site_logo)
+            return '{}/@@site-logo/{}'.format(
+                site_url, filename)
+        else:
+            return '%s/logo.png' % site_url
