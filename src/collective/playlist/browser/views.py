@@ -29,17 +29,17 @@ class PlaylistView(DefaultView):
         # brains = self.context.getFolderContents()
         items = context.contentItems()
         tracks = [item for item in items if item[1].portal_type=="track"]
-        tracklist = ""
+        tracklist = u""
         for tr in tracks:
             title = tr[1].title
             format = tr[1].audiofile.filename.split(".")[-1]
             address = "/".join([context.absolute_url(), tr[0], "@@download/audiofile", tr[1].audiofile.filename])
-            str = "{{title:'{title}', {format}:'{address}'}}".format(title=title, format=format, address=address)
+            str = u"{{title:'{title}', {format}:'{address}'}}".format(title=title, format=format, address=address)
             tracklist += str + ", "
         return tracklist
             
     def js_collectiveplaylist(self):
-        js = """ $(document).ready(function(){{
+        js = u""" $(document).ready(function(){{
 
     new jPlayerPlaylist({{
         jPlayer: "#jquery_jplayer_playlist",

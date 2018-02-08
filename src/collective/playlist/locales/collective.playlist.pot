@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 09:03+0000\n"
+"POT-Creation-Date: 2018-02-08 10:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,12 +47,28 @@ msgstr ""
 msgid "View"
 msgstr ""
 
+#: ../browser/templates/playlistview.pt:30
+msgid "add track"
+msgstr ""
+
 #: ../configure.zcml:29
 msgid "collective.playlist"
 msgstr ""
 
 #: ../configure.zcml:38
 msgid "collective.playlist (uninstall)"
+msgstr ""
+
+#: ../browser/templates/playlistview.pt:27
+msgid "edit list of tracks"
+msgstr ""
+
+#: ../browser/templates/playlistview.pt:24
+msgid "edit playlist"
+msgstr ""
+
+#: ../browser/templates/playlistview.pt:23
+msgid "home"
 msgstr ""
 
 #: ../content/track.py:20

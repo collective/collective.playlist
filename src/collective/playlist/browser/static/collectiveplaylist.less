@@ -13,7 +13,7 @@ html {
     background-image: url("static/background.jpg");
 }
 body {
-    font-family:Arial,Verdana,sans-serif;
+    font-family: Arial,Verdana,sans-serif;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
@@ -26,6 +26,12 @@ body {
     }
 }
 
+a,
+a:link,
+a:visited,
+a:hover {
+    color: @linkcolor;
+}
 
 .container {
 }
@@ -51,18 +57,22 @@ header {
         filter: alpha(opacity=85);       
     }
     .jp-playlist {
-        top: 4em;
+        top: 3rem;
         background-color: #777;
         opacity: 0.85;
         filter: alpha(opacity=85);
         ul {
-            a {
-                font-size: 1.3em;
-                line-height: 1.6;
+            li {
+                margin-top: .7em;
+                a {
+                    font-size: 1.3rem;
+                    line-height: 1.2;
+                }
+                &.jp-playlist-current a {
+                            color: lighten(@linkcolor, 10%);
+                        } 
             }
-            li.jp-playlist-current a {
-                        color: lighten(@linkcolor, 10%);
-                    } 
+
         }      
     }
     .jp-progress {

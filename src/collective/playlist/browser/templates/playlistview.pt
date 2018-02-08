@@ -1,6 +1,9 @@
-<html>
+<html
+    i18n:domain="collective.playlist">
     <head>
         <title tal:content="context/Title|nothing">Playlist</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
@@ -18,9 +21,16 @@
         </header>
         
         <ul class="admin_add_and_edit" tal:condition="view/can_add_and_edit">
-            <li><a href="/">home</a></li>
-            <li><a href="edit" tal:attributes="href string:${context/absolute_url}/edit">edit</a></li>
-            <li><a href="++add++track" tal:attributes="href string:${context/absolute_url}/++add++track">add track</a></li>
+            <li><a href="/" i18n:translate="home">home</a></li>
+            <li><a href="edit" 
+                tal:attributes="href string:${context/absolute_url}/edit"
+                i18n:translate="edit playlist">edit playlist</a></li>
+            <li><a href="folder_contents" 
+                tal:attributes="href string:${context/absolute_url}/folder_contents"
+                i18n:translate="edit list of tracks">edit list of tracks</a></li>
+            <li><a href="++add++track" 
+                tal:attributes="href string:${context/absolute_url}/++add++track"
+                i18n:translate="add track">add track</a></li>
         </ul>
              
         
@@ -71,7 +81,7 @@
 
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/jplayer-flat-audio-theme.css" />
-        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css" />
+        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css?1006" />
 
 
         <script

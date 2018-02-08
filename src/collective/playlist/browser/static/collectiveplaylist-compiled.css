@@ -19,6 +19,12 @@ body {
 .clearfix + * {
   clear: both;
 }
+a,
+a:link,
+a:visited,
+a:hover {
+  color: #81b7e6;
+}
 header + * {
   clear: both;
 }
@@ -36,14 +42,17 @@ header > * {
   filter: alpha(opacity=85);
 }
 .jp-audio .jp-playlist {
-  top: 4em;
+  top: 3rem;
   background-color: #777;
   opacity: 0.85;
   filter: alpha(opacity=85);
 }
-.jp-audio .jp-playlist ul a {
-  font-size: 1.3em;
-  line-height: 1.6;
+.jp-audio .jp-playlist ul li {
+  margin-top: .7em;
+}
+.jp-audio .jp-playlist ul li a {
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 .jp-audio .jp-playlist ul li.jp-playlist-current a {
   color: #accfee;
