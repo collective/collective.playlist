@@ -27,8 +27,8 @@ class PlaylistView(DefaultView):
         context = self.context
         
         # brains = self.context.getFolderContents()
-        items = context.contentItems()
-        tracks = [item for item in items if item[1].portal_type=="track"]
+        items = context.contentItems() # full objects: tuple: (id, item)
+        tracks = [item for item in items if (item[1].portal_type=="track" and api.content.get_state(obj=item[1])=="published")]
         tracklist = u""
         for tr in tracks:
             title = tr[1].title
