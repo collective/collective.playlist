@@ -52,6 +52,16 @@
                             <div class="jp-play-bar"></div>
                         </div>
                     </div>
+                    <div class="jp-toggles">
+                        <!-- <button class="jp-repeat" role="button" tabindex="0">
+                            <i class="fa fa-repeat"></i></button> -->
+                        <a class="jp-repeat"><i class="fa fa-repeat"></i></a>
+                        
+                        <!-- <button class="jp-shuffle" role="button" tabindex="0">
+                            <i class="fa fa-random"></i></button> -->
+                        <a class="jp-shuffle"><i class="fa fa-random"></i></a>
+                        <!-- <button class="jp-full-screen" role="button" tabindex="0">full screen</button> -->
+                    </div>
                     <div class="jp-volume-controls">
                         <a class="jp-mute"><i class="fa fa-volume-off"></i></a>
                         <a class="jp-volume-max"><i class="fa fa-volume-up"></i></a>

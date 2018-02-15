@@ -51,10 +51,50 @@ header {
 .jp-audio {
     .jp-controls,
     .jp-progress .jp-seek-bar,
-    .jp-volume-controls {
+    .jp-volume-controls,
+    .jp-toggles {
         background-color: #777;
         opacity: 0.85;
         filter: alpha(opacity=85);       
+    }
+    .jp-progress {
+        background-color: #374F68;
+        right: 160px;
+    }
+    .jp-time-holder {
+      right: 170px;
+    }
+    .jp-toggles {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        width: 80px;
+        height: 100%;
+        
+        // background-color: #2C3E50;
+        // padding: 0 10px;
+        text-align: left;        
+        a {
+          text-decoration: none;
+          font-size: 20px;
+          padding-left: 12px;
+          line-height: 42px;
+          color: #ECF0F1;
+          cursor: pointer;
+          &:before {
+            display: inline-block;
+            font-family: flat-audio;
+            font-style: normal;
+            font-weight: 400;
+            text-decoration: none;
+            width: 80px;
+            line-height: 42px;
+            opacity: 1;
+          }
+          &:hover {
+            color: #2980B9;
+          }
+        }
     }
     .jp-playlist {
         top: 3rem;
@@ -67,6 +107,9 @@ header {
                 a {
                     font-size: 1.3rem;
                     line-height: 1.2;
+                    &:focus {
+                        outline: none;
+                    }
                 }
                 &.jp-playlist-current a {
                             color: lighten(@linkcolor, 10%);
@@ -75,11 +118,14 @@ header {
 
         }      
     }
-    .jp-progress {
-        background-color: #374F68;
-    }
 }
 
+// repeat is active
+.jp-audio.jp-state-looped {
+    .jp-toggles a.jp-repeat {
+        color: #2980B9;
+    }
+}
 
 
 

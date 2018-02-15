@@ -36,10 +36,47 @@ header > * {
 }
 .jp-audio .jp-controls,
 .jp-audio .jp-progress .jp-seek-bar,
-.jp-audio .jp-volume-controls {
+.jp-audio .jp-volume-controls,
+.jp-audio .jp-toggles {
   background-color: #777;
   opacity: 0.85;
   filter: alpha(opacity=85);
+}
+.jp-audio .jp-progress {
+  background-color: #374F68;
+  right: 160px;
+}
+.jp-audio .jp-time-holder {
+  right: 170px;
+}
+.jp-audio .jp-toggles {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  width: 80px;
+  height: 100%;
+  text-align: left;
+}
+.jp-audio .jp-toggles a {
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 12px;
+  line-height: 42px;
+  color: #ECF0F1;
+  cursor: pointer;
+}
+.jp-audio .jp-toggles a:before {
+  display: inline-block;
+  font-family: flat-audio;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  width: 80px;
+  line-height: 42px;
+  opacity: 1;
+}
+.jp-audio .jp-toggles a:hover {
+  color: #2980B9;
 }
 .jp-audio .jp-playlist {
   top: 3rem;
@@ -54,11 +91,14 @@ header > * {
   font-size: 1.3rem;
   line-height: 1.2;
 }
+.jp-audio .jp-playlist ul li a:focus {
+  outline: none;
+}
 .jp-audio .jp-playlist ul li.jp-playlist-current a {
   color: #accfee;
 }
-.jp-audio .jp-progress {
-  background-color: #374F68;
+.jp-audio.jp-state-looped .jp-toggles a.jp-repeat {
+  color: #2980B9;
 }
 ul.admin_add_and_edit {
   list-style: none;
