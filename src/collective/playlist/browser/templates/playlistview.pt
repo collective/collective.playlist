@@ -3,7 +3,7 @@
     <head>
         <title tal:content="context/Title|nothing">Playlist</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
     </head>
     <body>
         <header>
@@ -91,7 +91,7 @@
 
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/jplayer-flat-audio-theme.css" />
-        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css?1008" />
+        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css?1021" />
 
 
         <script

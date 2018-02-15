@@ -127,6 +127,15 @@ header {
     }
 }
 
+.jp-state-no-volume {
+    .jp-toggles {
+      right: 0;
+    }
+    .jp-progress {
+      right: 80px;
+    }
+}
+
 @media (max-width: 499px) {
     .jp-audio .jp-type-playlist {
         .jp-controls {
@@ -145,12 +154,19 @@ header {
             }
         }
         .jp-volume-controls {
-            // width: 100px;
+            
         }
         .jp-time-holder,
         .jp-progress {
             display: none;
         }
+        .jp-controls,
+        .jp-toggles {
+            // display: none;
+        }
+    }
+    .jp-state-no-volume .jp-controls {
+      right: 80px !important;
     }
     
 }

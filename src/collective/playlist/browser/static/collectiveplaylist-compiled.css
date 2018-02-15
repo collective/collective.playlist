@@ -100,6 +100,12 @@ header > * {
 .jp-audio.jp-state-looped .jp-toggles a.jp-repeat {
   color: #2980B9;
 }
+.jp-state-no-volume .jp-toggles {
+  right: 0;
+}
+.jp-state-no-volume .jp-progress {
+  right: 80px;
+}
 @media (max-width: 499px) {
   .jp-audio .jp-type-playlist .jp-controls {
     width: unset;
@@ -117,6 +123,9 @@ header > * {
   .jp-audio .jp-type-playlist .jp-time-holder,
   .jp-audio .jp-type-playlist .jp-progress {
     display: none;
+  }
+  .jp-state-no-volume .jp-controls {
+    right: 80px !important;
   }
 }
 ul.admin_add_and_edit {
