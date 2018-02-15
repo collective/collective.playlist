@@ -26,7 +26,7 @@ Documentation
 
 If you want to use the viewlet, add the following to your product:
 
-
+TODO: Icon for Player
         .fontellostuff;
         content: '\25bc';
         
@@ -77,3 +77,8 @@ License
 -------
 
 The project is licensed under the GPLv2.
+TODO: JPlayer-License
+
+
+
+For JPLayer see http://jplayer.org/latest/demo-02-multi/

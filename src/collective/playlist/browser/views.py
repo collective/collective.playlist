@@ -46,11 +46,12 @@ class PlaylistView(DefaultView):
         cssSelectorAncestor: "#jp_container_playlist"
     }}, [ {dtracks}
     ], {{
-        volume: 1.0,
+        volume: 0.85,
         playlistOptions: {{
             autoPlay: true,}},
-        swfPath: "../../dist/jplayer",
-        supplied: "oga, ogg, mp3, wav",
+        swfPath: "/++resource++collective.playlist",
+        solution: 'html, flash',
+        supplied: "mp3, oga, ogg, wav",
         wmode: "window",
         useStateClassSkin: true,
         autoBlur: false,
