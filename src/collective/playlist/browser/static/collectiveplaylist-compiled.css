@@ -100,6 +100,25 @@ header > * {
 .jp-audio.jp-state-looped .jp-toggles a.jp-repeat {
   color: #2980B9;
 }
+@media (max-width: 499px) {
+  .jp-audio .jp-type-playlist .jp-controls {
+    width: unset;
+    right: 190px;
+  }
+  .jp-audio .jp-type-playlist .jp-controls * {
+    font-size: 30px !important;
+  }
+  .jp-audio .jp-type-playlist .jp-toggles {
+    width: 110px;
+  }
+  .jp-audio .jp-type-playlist .jp-toggles * {
+    font-size: 30px !important;
+  }
+  .jp-audio .jp-type-playlist .jp-time-holder,
+  .jp-audio .jp-type-playlist .jp-progress {
+    display: none;
+  }
+}
 ul.admin_add_and_edit {
   list-style: none;
   padding-left: 40px;

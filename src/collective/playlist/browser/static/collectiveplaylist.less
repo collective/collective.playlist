@@ -127,6 +127,33 @@ header {
     }
 }
 
+@media (max-width: 499px) {
+    .jp-audio .jp-type-playlist {
+        .jp-controls {
+            // width: 180px;
+            // width: 245px;
+            width: unset;
+            right: 190px;
+            & * {
+                font-size: 30px !important;
+            }
+        }
+        .jp-toggles {
+            width: 110px;
+            & * {
+                font-size: 30px !important;
+            }
+        }
+        .jp-volume-controls {
+            // width: 100px;
+        }
+        .jp-time-holder,
+        .jp-progress {
+            display: none;
+        }
+    }
+    
+}
 
 
 // admin stuff
