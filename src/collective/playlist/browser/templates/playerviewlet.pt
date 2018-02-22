@@ -2,7 +2,8 @@
     <a class="playlist-button" 
         href="./playlist-mocoloco" 
         target="_blank"
-        tal:attributes="href view/href">
-        <span class="glyphicon glyphicon-play-circle"></span>
+        tal:attributes="href view/href|nothing">
+        <span class="glyphicon glyphicon-play-circle"
+            style="font-size: 3em; margin: 0 2em;"></span>
     </a>
 </div>

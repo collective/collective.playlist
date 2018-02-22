@@ -77,8 +77,8 @@ License
 -------
 
 The project is licensed under the GPLv2.
-TODO: JPlayer-License
 
-
+Music:
+© 2003 Miaow / Arnaud Laflaquiere - MiaowMusic.net
 
 For JPLayer see http://jplayer.org/latest/demo-02-multi/
