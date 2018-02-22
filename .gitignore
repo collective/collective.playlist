@@ -25,7 +25,6 @@ log.html
 output.xml
 pip-selfcheck.json
 report.html
-.DS_Store
 # excludes
 !.coveragerc
 !.editorconfig
@@ -34,4 +33,7 @@ report.html
 !.gitkeep
 !.travis.yml
 !src/collective
+node_modules
+.DS_Store
 *.pyc
+*.pyo
