@@ -22,6 +22,15 @@
     directory="static" />
       
 
+
+    <browser:page
+      name="playlist-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".settings.SettingsView"
+      permission="cmf.ManagePortal"
+      />
+      
+      
   <browser:viewlet
     name="bluechurch.playerviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
@@ -31,21 +40,22 @@
     permission="zope2.View"
     />
     
-    <browser:page
-       name="playlistview"
-       for="collective.playlist.content.playlist.IPlaylist"
-       layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
-       class=".views.PlaylistView"
-       template="templates/playlistview.pt"
-       permission="zope2.View"
-       />
+  <browser:page
+    name="playlistview"
+    for="collective.playlist.content.playlist.IPlaylist"
+    layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+    class=".views.PlaylistView"
+    template="templates/playlistview.pt"
+    permission="zope2.View"
+    />
 
-       <adapter
-           for="Products.CMFCore.interfaces.IFolderish
-                zope.publisher.interfaces.browser.IDefaultBrowserLayer
-                plone.dexterity.interfaces.IDexterityFTI"
-           provides="zope.publisher.interfaces.browser.IBrowserPage"
-           factory="plone.dexterity.browser.add.DefaultAddView"
-           name="track"
-           />
+  <adapter
+    for="Products.CMFCore.interfaces.IFolderish
+        zope.publisher.interfaces.browser.IDefaultBrowserLayer
+        plone.dexterity.interfaces.IDexterityFTI"
+    provides="zope.publisher.interfaces.browser.IBrowserPage"
+    factory="plone.dexterity.browser.add.DefaultAddView"
+    name="track"
+    />
+    
 </configure>

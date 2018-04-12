@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 from plone import api
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
@@ -22,9 +23,15 @@ def post_install(context):
     _create_content(portal)
 
 
+
 def uninstall(context):
-    """Uninstall script"""
-    # Do something at the end of the uninstallation of this package.
+    """Uninstall script
+    
+    delete playlists with tracks"""
+    
+    playlists = api.content.find(portal_type='playlist')
+    playlists = [b.getObject() for b in playlists]
+    api.content.delete(objects=playlists)
 
 
 def _create_content(portal):
@@ -33,7 +40,7 @@ def _create_content(portal):
         playlist = api.content.create(
             type='playlist',
             container=portal,
-            title=u'Playllist',
+            title=u'Playlist',
             id=playlistid
         )
         for track_number in range(1, 4):

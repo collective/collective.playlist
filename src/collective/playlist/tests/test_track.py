@@ -37,8 +37,13 @@ class TrackIntegrationTest(unittest.TestCase):
 
     def test_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        obj = api.content.create(
+        playlist = api.content.create(
             container=self.portal,
+            type='playlist',
+            id='myplaylist',
+        )
+        obj = api.content.create(
+            container=playlist,
             type='track',
             id='track',
         )

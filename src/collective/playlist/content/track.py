@@ -15,47 +15,13 @@ class ITrack(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Track
     """
 
+    # TODO: validator: ALLOWED_AUDIOTYPES = ["mp3", "oga", "ogg", "wav"]
     audiofile = namedfile.NamedBlobFile (
         title=_(u'Audio'),
-        description = _(u'mp3, etc.'),
+        description = _(u'mp3, oga, ogg, wav'),
         required=True,
     )
     
-    
-    # directives.widget(level=RadioFieldWidget)
-    # level = schema.Choice(
-    #     title=_(u'Sponsoring Level'),
-    #     vocabulary=LevelVocabulary,
-    #     required=True
-    # )
-
-    # text = RichText(
-    #     title=_(u'Text'),
-    #     required=False
-    # )
-
-    # url = schema.URI(
-    #     title=_(u'Link'),
-    #     required=False
-    # )
-
-    # fieldset('Images', fields=['logo', 'advertisement'])
-    # logo = namedfile.NamedBlobImage(
-    #     title=_(u'Logo'),
-    #     required=False,
-    # )
-
-    # advertisement = namedfile.NamedBlobImage(
-    #     title=_(u'Advertisement (Gold-sponsors and above)'),
-    #     required=False,
-    # )
-
-    # directives.read_permission(notes='cmf.ManagePortal')
-    # directives.write_permission(notes='cmf.ManagePortal')
-    # notes = RichText(
-    #     title=_(u'Secret Notes (only for site-admins)'),
-    #     required=False
-    # )
 
 
 @implementer(ITrack)

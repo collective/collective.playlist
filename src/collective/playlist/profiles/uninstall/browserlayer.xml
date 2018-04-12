@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="collective.playlist"
-      remove="true"
+      remove="True"
       />
 </layers>

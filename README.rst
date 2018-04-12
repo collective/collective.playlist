@@ -6,32 +6,62 @@
 collective.playlist
 ===================
 
-Provides a playlist with tracks
-
-Features
---------
-
-- Viewlet with button to modal with playlist player. Uses jplayer. Newest Playlist gets linked.
+collective.playlist provides playlist and track content types and a pop up player.
 
 
-Examples
---------
+.. figure:: playlist.png
+    :width: 210px
+    :align: center
 
-This add-on can be seen in action at the following sites:
-http://www.bluechurch.ch
+    Playlist
+
+Uses JPlayer_.
 
 
 Documentation
 -------------
 
-If you want to use the viewlet, add the following to your product:
+Initial playlist
+*******************
 
-TODO: Icon for Player
-        .fontellostuff;
-        content: '\25bc';
-        
-        
-        
+An initial playlist with tracks is created at /playlist.
+
+Playlist
+*********
+
+A play button is shown if and only if a published playlist exists.
+
+Click the play button to open the player. A qualified user is presented a menu to edit the playlist.
+
+
+Customizations
+--------------
+
+
+Layout
+***********
+
+Layout can be modified in control panel.
+
+Change Font
+**************
+
+.. figure:: font.png
+    :width: 400px
+    :align: center
+
+    Use your own font
+
+Background Image for your Playlist
+************************************
+
+Upload an image "background.jpg" to your Plone-Site.
+
+Go to playlist control panel and add::
+
+    html {
+        background-image:url("background.jpg");
+    }
 
 
 Translations
@@ -55,7 +85,13 @@ Install collective.playlist by adding it to your buildout::
         collective.playlist
 
 
-and then running ``bin/buildout``
+and then run ``bin/buildout``
+
+
+Plone Version Compatibility
+---------------------------
+
+Works with Plone 5
 
 
 Contribute
@@ -63,14 +99,6 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.playlist/issues
 - Source Code: https://github.com/collective/collective.playlist
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License
@@ -81,4 +109,13 @@ The project is licensed under the GPLv2.
 Music:
 © 2003 Miaow / Arnaud Laflaquiere - MiaowMusic.net
 
-For JPLayer see http://jplayer.org/latest/demo-02-multi/
+For JPLayer license see JPlayer_
+
+Author
+------
+
+- Katja Süss, Rohberg ( @ksuess )
+
+.. target-notes::
+
+.. _JPlayer: http://jplayer.org/latest/demo-02-multi/

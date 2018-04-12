@@ -1,0 +1,9 @@
+<registry>
+    <records interface="collective.playlist.browser.settings.ISettings" 
+        prefix="collective.playlist">
+        
+        <!-- Set default values -->
+
+    </records>
+
+</registry>

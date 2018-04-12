@@ -40,6 +40,6 @@ class PlaylistIntegrationTest(unittest.TestCase):
         obj = api.content.create(
             container=self.portal,
             type='playlist',
-            id='playlist',
+            id='myplaylist',
         )
         self.assertTrue(IPlaylist.providedBy(obj))

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-08 15:09+0000\n"
+"POT-Creation-Date: 2018-03-06 15:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,21 +9,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: collective.playlist\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
-#: ../content/track.py:19
+#: ../content/track.py:20
 msgid "Audio"
+msgstr ""
+
+#: ../content/playlist.py:18
+msgid "Copyright"
 msgstr ""
 
 #: ../profiles/default/types/playlist.xml
 #: ../profiles/default/types/track.xml
 msgid "Edit"
-msgstr ""
+msgstr "Editieren"
 
-#: ../configure.zcml:29
+#: ../configure.zcml:30
 msgid "Installs the collective.playlist add-on."
 msgstr ""
 
@@ -31,11 +36,31 @@ msgstr ""
 msgid "Playlist"
 msgstr ""
 
+#: ../profiles/default/controlpanel.xml
+msgid "Playlist Settings"
+msgstr "Playlist Einstellungen"
+
+#: ../browser/settings.py:18
+msgid "Some style to be applied to playlist. CSS"
+msgstr "Style, der auf Playlists angewandt werden soll. CSS"
+
+#: ../browser/settings.py:22
+msgid "Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu"
+msgstr "Stylesheets, die auf Playlists angewandt werden sollen. Z.B. https://fonts.googleapis.com/css?family=Ubuntu"
+
+#: ../browser/settings.py:17
+msgid "Style"
+msgstr ""
+
+#: ../browser/settings.py:21
+msgid "Stylesheets"
+msgstr ""
+
 #: ../profiles/default/types/track.xml
 msgid "Track"
 msgstr ""
 
-#: ../configure.zcml:38
+#: ../configure.zcml:39
 msgid "Uninstalls the collective.playlist add-on."
 msgstr ""
 
@@ -44,30 +69,30 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:31
+#: ../browser/templates/playlistview.pt:35
 msgid "add track"
-msgstr ""
+msgstr "Track hinzufügen"
 
-#: ../configure.zcml:29
+#: ../configure.zcml:30
 msgid "collective.playlist"
 msgstr ""
 
-#: ../configure.zcml:38
+#: ../configure.zcml:39
 msgid "collective.playlist (uninstall)"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:28
+#: ../browser/templates/playlistview.pt:32
 msgid "edit list of tracks"
-msgstr ""
+msgstr "Liste der Tracks editieren"
 
-#: ../browser/templates/playlistview.pt:25
+#: ../browser/templates/playlistview.pt:29
 msgid "edit playlist"
-msgstr ""
+msgstr "Playlist editieren"
 
-#: ../browser/templates/playlistview.pt:24
+#: ../browser/templates/playlistview.pt:28
 msgid "home"
-msgstr ""
+msgstr "Startseite"
 
-#: ../content/track.py:20
-msgid "mp3, etc."
+#: ../content/track.py:21
+msgid "mp3, oga, ogg, wav"
 msgstr ""

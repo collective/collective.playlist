@@ -23,10 +23,14 @@
 
 *** Settings *****************************************************************
 
-Resource  plone/app/robotframework/selenium.robot
-Resource  plone/app/robotframework/keywords.robot
+Variables  collective/playlist/tests/variables.py
 
-Library  Remote  ${PLONE_URL}/RobotRemote
+Resource  plone/app/robotframework/selenium.robot
+Resource  plone/app/robotframework/annotate.robot
+Resource  plone/app/robotframework/keywords.robot
+Resource  keywords.robot
+
+Library   Remote  ${PLONE_URL}/RobotRemote
 
 Test Setup  Open test browser
 Test Teardown  Close all browsers
@@ -35,53 +39,17 @@ Test Teardown  Close all browsers
 *** Test Cases ***************************************************************
 
 Scenario: As a site administrator I can add a track
-  Given a logged-in site administrator
-    and an add track form
-   When I type 'My Track' into the title field
-    and I submit the form
-   Then a track with the title 'My Track' has been created
+    Given a logged-in site administrator
+        and a playlist 'My Playlist'
+        and an add track form in  my-playlist
+    When I type 'My Track' into the title field
+        and Choose File  name=form.widgets.audiofile  ${PATH_TO_TEST_FILES}/track-1.mp3
+        and I submit the form
+    Then a track with the title 'My Track' has been created
 
-Scenario: As a site administrator I can view a track
-  Given a logged-in site administrator
-    and a track 'My Track'
-   When I go to the track view
-   Then I can see the track title 'My Track'
-
-
-*** Keywords *****************************************************************
-
-# --- Given ------------------------------------------------------------------
-
-a logged-in site administrator
-  Enable autologin as  Site Administrator
-
-an add track form
-  Go To  ${PLONE_URL}/++add++track
-
-a track 'My Track'
-  Create content  type=track  id=my-track  title=My Track
-
-
-# --- WHEN -------------------------------------------------------------------
-
-I type '${title}' into the title field
-  Input Text  name=form.widgets.IDublinCore.title  ${title}
-
-I submit the form
-  Click Button  Save
-
-I go to the track view
-  Go To  ${PLONE_URL}/my-track
-  Wait until page contains  Site Map
-
-
-# --- THEN -------------------------------------------------------------------
-
-a track with the title '${title}' has been created
-  Wait until page contains  Site Map
-  Page should contain  ${title}
-  Page should contain  Item created
-
-I can see the track title '${title}'
-  Wait until page contains  Site Map
-  Page should contain  ${title}
+Scenario: As a Site Administrator I can view a track
+    Given a logged-in site administrator
+        and a playlist 'My Playlist'
+        and a track  my-playlist  My Track  track-1.mp3
+    When I go to track my-track in my-playlist
+    Then I can see the track title 'My Track'

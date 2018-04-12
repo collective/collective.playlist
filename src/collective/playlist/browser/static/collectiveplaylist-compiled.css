@@ -7,7 +7,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
   background-color: #798a9e;
-  background-image: url("background.jpg");
 }
 body {
   font-family: Arial, Verdana, sans-serif;
@@ -15,6 +14,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.42857143;
+  margin: 0.5em;
 }
 .clearfix + * {
   clear: both;
@@ -33,6 +33,9 @@ header > * {
   padding-right: 2rem;
   margin: 1em 0;
   line-height: 3rem;
+}
+#portal-logo {
+  margin: 0 0 0 0.2rem;
 }
 .jp-audio .jp-controls,
 .jp-audio .jp-progress .jp-seek-bar,
@@ -105,6 +108,10 @@ header > * {
 }
 .jp-state-no-volume .jp-progress {
   right: 80px;
+}
+#copyright {
+  position: fixed;
+  bottom: 0px;
 }
 @media (max-width: 499px) {
   .jp-audio .jp-type-playlist .jp-controls {

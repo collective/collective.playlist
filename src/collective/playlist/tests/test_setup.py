@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
+
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+
 from plone import api
 from collective.playlist.testing import COLLECTIVE_PLAYLIST_INTEGRATION_TESTING  # noqa
 
@@ -37,6 +41,9 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+
+        setRoles(self.portal, TEST_USER_ID, ['Site Administrator'])
+        
         self.installer = api.portal.get_tool('portal_quickinstaller')
         self.installer.uninstallProducts(['collective.playlist'])
 
