@@ -1,10 +1,10 @@
 # coding: utf-8
 from plone import api
-from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
 import os
+
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
@@ -23,19 +23,18 @@ def post_install(context):
     _create_content(portal)
 
 
-
 def uninstall(context):
     """Uninstall script
-    
+
     delete playlists with tracks"""
-    
+
     playlists = api.content.find(portal_type='playlist')
     playlists = [b.getObject() for b in playlists]
     api.content.delete(objects=playlists)
 
 
 def _create_content(portal):
-    playlistid = "playlist"
+    playlistid = 'playlist'
     if not portal.get(playlistid, False):
         playlist = api.content.create(
             type='playlist',
@@ -54,7 +53,7 @@ def _create_content(portal):
             )
             track.audiofile = _load_file(track_number)
             api.content.transition(obj=track, transition='publish')
-        
+
         # NOTE: if your plone site is not a vanilla plone
         # you can have different workflows on folders and files
         # or different transitions names so this could fail

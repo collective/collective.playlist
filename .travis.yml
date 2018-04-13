@@ -27,6 +27,8 @@ before_script:
 script:
   - bin/code-analysis
   - bin/test
+allow_failures:
+  - script: bin/code-analysis
 after_success:
   - bin/createcoverage
   - pip install coveralls
