@@ -94,7 +94,7 @@ class PlaylistView(DefaultView):
             site = api.portal.get()
         site_url = site.absolute_url()
         if api.portal.get_registry_record('plone.site_logo', default=None):
-            return '{}/@@site-logo'.format(site_url)
+            return '{}/@@site-logo'.format(site_url)  # flake8: noqa
 
     @ram.cache(lambda *args: time() // (60))  # one minute
     def css_collectiveplaylist(self):
@@ -106,7 +106,7 @@ class PlaylistView(DefaultView):
         stylesheets = api.portal.get_registry_record(
             'collective.playlist.stylesheets')
         result = u''
-        tag = u'<link rel="stylesheet" type="text/css" href="{}" />'
+        tag = u'<link rel="stylesheet" type="text/css" href="{}" />'  # flake8: noqa
         for ss in stylesheets:
             result += tag.format(ss)
         return result

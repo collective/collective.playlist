@@ -10,7 +10,6 @@ class ITrack(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Track
     """
 
-    # TODO: validator: ALLOWED_AUDIOTYPES = ["mp3", "oga", "ogg", "wav"]
     audiofile = namedfile.NamedBlobFile(
         title=_(u'Audio'),
         description=_(u'mp3, oga, ogg, wav'),
