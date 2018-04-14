@@ -15,9 +15,7 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: Play button is shown
-    Go to homepage
-    a play button is visible
+# Initial content: published playlist with three tracks
 
 Scenario: Play button is shown if and only if a published playlist exists
     Enable autologin as  Site Administrator
@@ -25,7 +23,7 @@ Scenario: Play button is shown if and only if a published playlist exists
     a play button is visible
     Click play button
     Select pop up window
-    a playlist is visible
+    Wait until playlist is open
 
     Click Link  edit playlist
     Retract object
@@ -39,8 +37,8 @@ Scenario: Play button is shown if and only if a published playlist exists
 Click play button
     Click Link  css=a.playlist-button
 
-# Wait until playlist is open
-#     Wait Until Page Contains Element  css=#jp_container_playlist
+Wait until playlist is open
+    Wait Until Page Contains Element  css=#jp_container_playlist
 
 
 # --- THEN -------------------------------------------------------------------

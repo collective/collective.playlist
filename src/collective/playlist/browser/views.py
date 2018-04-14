@@ -8,7 +8,6 @@ from time import time
 import json
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -80,7 +79,10 @@ class PlaylistView(DefaultView):
 
     def can_add_and_edit(self):
         try:
-            roles = api.user.get_roles()
+            # roles = api.user.get_roles()  # robot tests fail
+                                            # on getMemberById(username)
+            current = api.user.get_current()
+            roles = current.getRoles()
         except api.user.UserNotFoundError:
             roles = []
         result = 'Manager' in roles or \

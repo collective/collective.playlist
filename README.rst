@@ -29,7 +29,7 @@ An initial playlist with tracks is created at /playlist.
 Playlist
 *********
 
-A play button is shown on top of each page if and only if a published playlist exists.
+A play button is shown on top of each page if and only if a published playlist exists. For a qualified user it's shown anyway.
 
 Click the play button to open the player. A qualified user is presented a menu to edit the playlist.
 
