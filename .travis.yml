@@ -5,6 +5,10 @@ cache:
   directories:
     - eggs
     - downloads
+addons:
+  # XXX: use an older Firefox ESR as we are stuck with selenium = 2.53.5
+  #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
+  firefox: 45.9.0esr
 python:
   - 2.7
 env:
@@ -18,8 +22,6 @@ matrix:
 install:
   - virtualenv .
   - bin/pip install -r requirements.txt
-  - bin/pip install selenium
-  - export PATH=`pwd`/selenium:$PATH
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
 before_script:
@@ -31,7 +33,7 @@ script:
   - bin/test --all
 after_success:
   - bin/createcoverage
-  - pip install coveralls
+  - bin/pip install coverage
   - bin/python -m coverage.pickle2json
   - pip install coveralls
   - coveralls
