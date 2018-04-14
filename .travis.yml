@@ -19,9 +19,10 @@ install:
   - virtualenv .
   - bin/pip install -r requirements.txt
   - bin/pip install selenium
-  - ls -la
-  - ls -la ~/virtualenv/python2.7
+  - ls -la ./selenium
   - export PATH=$PWD/selenium:$PATH
+  - pwd
+  - echo $PATH
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
 before_script:
