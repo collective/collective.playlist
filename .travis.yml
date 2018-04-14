@@ -5,6 +5,10 @@ cache:
   directories:
     - eggs
     - downloads
+addons:
+  # XXX: use an older Firefox ESR as we are stuck with selenium = 2.53.5
+  #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
+  firefox: 45.9.0esr
 python:
   - 2.7
 env:
@@ -18,11 +22,6 @@ matrix:
 install:
   - virtualenv .
   - bin/pip install -r requirements.txt
-  - bin/pip install selenium
-  - ls -la ./selenium
-  - export PATH=$PWD/selenium:$PATH
-  - pwd
-  - echo $PATH
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
 before_script:
