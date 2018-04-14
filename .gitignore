@@ -38,3 +38,4 @@ node_modules
 *.pyc
 *.pyo
 selenium
+man

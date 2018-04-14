@@ -101,6 +101,13 @@ Contribute
 - Source Code: https://github.com/collective/collective.playlist
 
 
+.. image:: https://travis-ci.org/ksuess/collective.playlist.svg?branch=master
+    :target: https://travis-ci.org/ksuess/collective.playlist
+    
+.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master
+    :target: https://coveralls.io/github/ksuess/collective.playlist?branch=master
+
+
 License
 -------
 

@@ -18,6 +18,8 @@ matrix:
 install:
   - virtualenv .
   - bin/pip install -r requirements.txt
+  - bin/pip install selenium
+  - export PATH=`pwd`/selenium:$PATH
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
   - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
 before_script:
