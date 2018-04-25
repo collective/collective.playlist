@@ -24,8 +24,8 @@ class ISettings(Interface):
         default=[],
         missing_value=None,
         required=False,
-        value_type=schema.TextLine()
-        )
+        value_type=schema.TextLine(),
+    )
 
 
 class SettingsEditForm(RegistryEditForm):

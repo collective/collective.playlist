@@ -11,13 +11,12 @@
         title="collective.playlist: Add Playlist"
     />
 
-        
+
     <permission
         id="collective.playlist.AddTrack"
         title="collective.playlist: Add Track"
     />
 
-        
 
   </configure>
 

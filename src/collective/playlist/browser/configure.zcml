@@ -20,7 +20,10 @@
   <browser:resourceDirectory
     name="collective.playlist"
     directory="static" />
-      
+
+  <browser:resourceDirectory
+    name="collective.playlist.extern"
+    directory="static-extern" />
 
 
     <browser:page
@@ -29,8 +32,8 @@
       class=".settings.SettingsView"
       permission="cmf.ManagePortal"
       />
-      
-      
+
+
   <browser:viewlet
     name="bluechurch.playerviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
@@ -39,7 +42,7 @@
     layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
     permission="zope2.View"
     />
-    
+
   <browser:page
     name="playlistview"
     for="collective.playlist.content.playlist.IPlaylist"
@@ -57,5 +60,5 @@
     factory="plone.dexterity.browser.add.DefaultAddView"
     name="track"
     />
-    
+
 </configure>

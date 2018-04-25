@@ -56,5 +56,5 @@ class TestUninstall(unittest.TestCase):
             ICollectivePlaylistLayer
         from plone.browserlayer import utils
         self.assertNotIn(
-           ICollectivePlaylistLayer,
-           utils.registered_layers())
+            ICollectivePlaylistLayer,
+            utils.registered_layers())

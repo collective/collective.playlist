@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
     </head>
-    
+
     <body>
         <header>
             <div>
@@ -20,28 +20,28 @@
                 </tal:define>
             </div>
 
-        
+
             <!-- <h3 tal:content="context/Title|nothing">Playlist</h3> -->
         </header>
-        
+
         <ul class="admin_add_and_edit" tal:condition="view/can_add_and_edit"
             tal:define="portal_state context/@@plone_portal_state;
                         portal_url portal_state/portal_url;">
-            <li><a href="/" 
-                tal:attributes="href portal_url" 
+            <li><a href="/"
+                tal:attributes="href portal_url"
                 i18n:translate="home">home</a></li>
-            <li><a href="edit" 
+            <li><a href="edit"
                 tal:attributes="href string:${context/absolute_url}/edit"
                 i18n:translate="edit playlist">edit playlist</a></li>
-            <li><a href="folder_contents" 
+            <li><a href="folder_contents"
                 tal:attributes="href string:${context/absolute_url}/folder_contents"
                 i18n:translate="edit list of tracks">edit list of tracks</a></li>
-            <li><a href="++add++track" 
+            <li><a href="++add++track"
                 tal:attributes="href string:${context/absolute_url}/++add++track"
                 i18n:translate="add track">add track</a></li>
         </ul>
-             
-        
+
+
         <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
 
         <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
@@ -64,7 +64,7 @@
                         <!-- <button class="jp-repeat" role="button" tabindex="0">
                             <i class="fa fa-repeat"></i></button> -->
                         <a class="jp-repeat"><i class="fa fa-repeat"></i></a>
-                        
+
                         <!-- <button class="jp-shuffle" role="button" tabindex="0">
                             <i class="fa fa-random"></i></button> -->
                         <a class="jp-shuffle"><i class="fa fa-random"></i></a>
@@ -95,11 +95,11 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="copyright" tal:content="structure view/copyright|nothing">copyright</div>
 
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/jplayer-flat-audio-theme.css" />
+        <link rel="stylesheet" type="text/css" href="++resource++collective.playlist.extern/jplayer-flat-audio-theme.css" />
         <link rel="stylesheet" type="text/css" href="++resource++collective.playlist/collectiveplaylist-compiled.css?1022" />
 
         <tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
@@ -107,11 +107,11 @@
 
 
         <script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
-        <script type="text/javascript" src="++resource++collective.playlist/jquery.jplayer.min.js"></script>
-        <script type="text/javascript" src="++resource++collective.playlist/jplayer.playlist.min.js"></script>
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="++resource++collective.playlist.extern/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="++resource++collective.playlist.extern/jplayer.playlist.min.js"></script>
         <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
     </body>
 </html>

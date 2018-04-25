@@ -40,7 +40,7 @@ def _create_content(portal):
             type='playlist',
             container=portal,
             title=u'Playlist',
-            id=playlistid
+            id=playlistid,
         )
         for track_number in range(1, 4):
             track_id = u'track-{0}'.format(str(track_number))
@@ -49,7 +49,7 @@ def _create_content(portal):
                 type='track',
                 container=playlist,
                 title=track_name,
-                id=track_id
+                id=track_id,
             )
             track.audiofile = _load_file(track_number)
             api.content.transition(obj=track, transition='publish')
@@ -72,5 +72,5 @@ def _load_file(track_number):
     )
     return NamedBlobFile(
         data=open(filename, 'r').read(),
-        filename=u'track-{0}.mp3'.format(track_number)
+        filename=u'track-{0}.mp3'.format(track_number),
     )

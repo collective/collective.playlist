@@ -1,13 +1,13 @@
 # coding: utf-8
+
+import json
 from collective.playlist import ALLOWED_AUDIOTYPES
 from plone import api
 from plone.dexterity.browser.view import DefaultView
 from plone.memoize import ram
 from time import time
 
-import json
 import logging
-
 logger = logging.getLogger(__name__)
 
 
@@ -32,7 +32,7 @@ class PlaylistView(DefaultView):
         context = self.context
         items = context.contentItems()
         tracks = [item for item in items if (item[1].portal_type == 'track' and
-                  api.content.get_state(obj=item[1]) == 'published')]
+                                             api.content.get_state(obj=item[1]) == 'published')]
         tracklist = []
         for tr in tracks:
             title = tr[1].title
@@ -45,7 +45,7 @@ class PlaylistView(DefaultView):
             tracklist.append({'title': title, format: address})
         return tracklist
 
-    @ram.cache(lambda *args: time() // 3)
+    # @ram.cache(lambda *args: time() // 3)
     def js_collectiveplaylist(self):
         """ Initialize JPlayer"""
         js = u""" $(document).ready(function(){{
@@ -79,8 +79,7 @@ class PlaylistView(DefaultView):
 
     def can_add_and_edit(self):
         try:
-            # roles = api.user.get_roles()  # robot tests fail
-                                            # on getMemberById(username)
+            # roles = api.user.get_roles()
             current = api.user.get_current()
             roles = current.getRoles()
         except api.user.UserNotFoundError:

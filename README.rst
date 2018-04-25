@@ -6,14 +6,21 @@
 collective.playlist
 ===================
 
-collective.playlist provides playlist and track content types and a pop up player.
+collective.playlist provides playlist and track content types and a player.
 
 
 .. figure:: playlist.png
-    :width: 210px
+    :width: 500px
     :align: center
 
     Playlist
+
+
+.. figure:: playlist_mobile.png
+    :width: 210px
+    :align: center
+
+    Playlist mobile
 
 Uses JPlayer_.
 
@@ -31,7 +38,7 @@ Playlist
 
 A play button is shown on top of each page if and only if a published playlist exists. For a qualified user it's shown anyway.
 
-Click the play button to open the player. A qualified user is presented a menu to edit the playlist.
+Click the play button to open the player. A menu to edit the playlist is presented to qualified users.
 
 
 Customizations
@@ -91,7 +98,7 @@ and then run ``bin/buildout``
 Plone Version Compatibility
 ---------------------------
 
-Works with Plone 5
+Plone 5
 
 
 Contribute

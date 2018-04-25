@@ -22,7 +22,7 @@ def test_suite():
         suite.addTests([
             layered(
                 robottestsuite,
-                layer=COLLECTIVE_PLAYLIST_ACCEPTANCE_TESTING
+                layer=COLLECTIVE_PLAYLIST_ACCEPTANCE_TESTING,
             ),
         ])
     return suite

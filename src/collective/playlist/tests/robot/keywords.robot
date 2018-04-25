@@ -20,7 +20,14 @@ Select pop up window
 # --- Given ------------------------------------------------------------------
 
 a logged-in site administrator
-    Enable autologin as  Site Administrator
+  Enable autologin as  Site Administrator  Contributor  Reviewer
+  
+Log in as site administrator
+    Enable autologin as  Manager
+    Create user  siteadmin  roles=('Contributor','Reviewer','Site Administrator')
+    # Set autologin username  siteadmin
+    Disable autologin
+    Log in  siteadmin  siteadmin
 
 an add playlist form
     Go To  ${PLONE_URL}/++add++playlist
@@ -30,8 +37,8 @@ a playlist 'My Playlist'
 
 
 an add track form in
-    [Arguments]    ${parent_id}  
-    [Documentation]    Add track in current playlist 
+    [Arguments]    ${parent_id}
+    [Documentation]    Add track in current playlist
     Go To  ${PLONE_URL}/${parent_id}/++add++track
 
 a track
@@ -59,7 +66,7 @@ I submit the form
 I go to the playlist view
   Go To  ${PLONE_URL}/my-playlist
   # Wait until page contains  Site Map
-  
+
 I go to track ${track_id} in ${playlist_id}
     Go To  ${PLONE_URL}/${playlist_id}/${track_id}
 
@@ -73,7 +80,7 @@ a playlist with the title '${title}' has been created
 I can see the playlist title '${title}'
   # Wait until page contains  Site Map
   Page should contain  ${title}
-  
+
 
 a track with the title '${title}' has been created
     Wait until page contains  Site Map
@@ -83,4 +90,4 @@ a track with the title '${title}' has been created
 I can see the track title '${title}'
     Wait until page contains  Site Map
     Page should contain  ${title}
-  
+
