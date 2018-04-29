@@ -12,6 +12,7 @@ collective.playlist provides playlist and track content types and a player.
 .. figure:: playlist.png
     :width: 500px
     :align: center
+    :alt: Playlist
 
     Playlist
 
@@ -19,6 +20,7 @@ collective.playlist provides playlist and track content types and a player.
 .. figure:: playlist_mobile.png
     :width: 210px
     :align: center
+    :alt: Playlist Mobile evices
 
     Playlist mobile
 
@@ -56,8 +58,9 @@ Change Font
 .. figure:: font.png
     :width: 400px
     :align: center
+    :alt: How to use your font
 
-    Use your own font
+    Use your font
 
 Background Image for your Playlist
 ************************************
