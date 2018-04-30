@@ -25,14 +25,14 @@
     <records prefix="plone.bundles/collectiveplaylist"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
-        <element>bundle-collectiveplaylist</element>
-        <!-- <element>jplayerplayliststyle</element>
+        <element>fontawesome</element>
+        <element>jplayerplayliststyle</element>
         <element>jplayerscript</element>
-        <element>jplayerplaylistscript</element> -->
+        <element>jplayerplaylistscript</element>
+        <element>bundle-collectiveplaylist</element>
       </value>
       <!-- <value key="merge_with">default</value> -->
-      <!-- TODO enabled False. The bundle is added to PlaylistView -->
-      <value key="enabled">True</value>
+      <value key="enabled">False</value>
       <value key="jscompilation">++plone++collective.playlist/collectiveplaylist.js</value>
       <value key="csscompilation">++plone++collective.playlist/collectiveplaylist.css</value>
       <value key="last_compilation">2018-04-01 00:00:00</value>
@@ -52,6 +52,15 @@
       <value key="css">++plone++collective.playlist.extern/foo.css</value>
     </records>   -->
     
+    <records prefix="plone.resources/jqueryNEW"
+                  interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+          <value key="js">++plone++collective.playlist.extern/jquery.min.js</value>
+        </records> 
+    <records prefix="plone.resources/fontawesome"
+                  interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+          <value key="css">++plone++collective.playlist.extern/font-awesome.min.css</value>
+        </records>
+        
     <records prefix="plone.resources/jplayerplayliststyle"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="css">++plone++collective.playlist.extern/jplayer-flat-audio-theme.css</value>
@@ -67,15 +76,14 @@
 
 
     <!-- EXTERNAL BUNDLE -->
-    
-    <records prefix="plone.bundles/jplayerplaylist"
+
+    <!--    <records prefix="plone.bundles/jplayerplaylist"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>jplayerplayliststyle</element>
         <element>jplayerscript</element>
         <element>jplayerplaylistscript</element>
       </value>
-      <!-- <value key="merge_with">default</value> -->
       <value key="enabled">False</value>
       <value key="last_compilation">2018-04-01 00:00:00</value>
       <value key="compile">False</value>
@@ -83,5 +91,6 @@
         <element>jquery</element>
       </value>
     </records>
+     -->
     
 </registry>

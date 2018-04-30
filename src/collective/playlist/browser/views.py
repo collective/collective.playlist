@@ -5,20 +5,22 @@ from collective.playlist import ALLOWED_AUDIOTYPES
 from plone import api
 from plone.dexterity.browser.view import DefaultView
 from plone.memoize import ram
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.resources import add_bundle_on_request
+from Products.CMFPlone.resources import add_resource_on_request
+from Products.CMFPlone.resources import remove_bundle_on_request
 from time import time
 
 import logging
 logger = logging.getLogger(__name__)
 
 
-class PlaylistView(DefaultView):
-    """
+class PlaylistBaseView(DefaultView):
+    """ Base View
     """
 
     def __call__(self):
-        add_bundle_on_request(self.request, 'collectiveplaylist')
-        add_bundle_on_request(self.request, 'jplayerplaylist')
+        return u"Base View. "
 
 
     def _dict_tracks(self):
@@ -111,7 +113,7 @@ class PlaylistView(DefaultView):
     @ram.cache(lambda *args: time() // (60))  # one minute
     def css_stylesheets_collectiveplaylist(self):
         stylesheets = api.portal.get_registry_record(
-            'collective.playlist.stylesheets')
+            'collective.playlist.stylesheets') or []
         result = u''
         tag = u'<link rel="stylesheet" type="text/css" href="{}" />'  # flake8: noqa
         for ss in stylesheets:
@@ -123,3 +125,27 @@ class PlaylistView(DefaultView):
         context = self.context
         cr = context.copyright.output
         return cr
+
+    def include_jquery(self):
+        return True
+
+
+class PlaylistView(PlaylistBaseView):
+    """
+    """
+    template = ViewPageTemplateFile("templates/playlistview.pt")
+
+    def __call__(self):
+        """ TODO add resources to view
+        """
+        add_resource_on_request(self.request, 'fontawesome')
+        add_resource_on_request(self.request, 'jqueryNEW')
+        add_bundle_on_request(self.request, 'collectiveplaylist')
+        
+        remove_bundle_on_request(self.request, 'jquery')
+        
+        remove_bundle_on_request(self.request, 'plone')
+        remove_bundle_on_request(self.request, 'plone-logged-in')
+        remove_bundle_on_request(self.request, 'plone-legacy')
+        return self.template()
+    

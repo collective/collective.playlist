@@ -4,6 +4,12 @@
         <title tal:content="context/Title|nothing">Playlist</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        
+        <!-- <tal:resources>
+          <link tal:replace="structure provider:plone.htmlhead.links" />
+          <metal:styleslot define-slot="style_slot" />
+          <tal:scripts replace="structure provider:plone.scripts" />
+        </tal:resources> -->
     </head>
 
     <body>
@@ -90,26 +96,30 @@
                     </ul>
                 </div>
                 <div class="jp-no-solution">
-                    <span>Update Required</span>
-                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                    <h3>Update Required</h3>
+                    To play the media you will need to update your browser to a recent version.
                 </div>
             </div>
         </div>
 
         <div id="copyright" tal:content="structure view/copyright|nothing">copyright</div>
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        
-        
-        
-        
-        
-        <link rel="stylesheet" type="text/css" href="++plone++collective.playlist.extern/jplayer-flat-audio-theme.css" />
-        <link rel="stylesheet" type="text/css" href="++plone++collective.playlist/collectiveplaylist-compiled.css?1022" />
+
+
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="++plone++collective.playlist.extern/jplayer-flat-audio-theme.css">
+        <script tal:condition="view/include_jquery"
+            type="text/javascript" src="++plone++collective.playlist.extern/jquery.min.js"></script>
+        <script type="text/javascript" src="++plone++collective.playlist.extern/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="++plone++collective.playlist.extern/jplayer.playlist.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" data-bundle="collectiveplaylist"
+             href="++plone++collective.playlist/collectiveplaylist.css">
+        <script type="text/javascript" data-bundle="collectiveplaylist"
+             src="http://localhost:8080/Plone/++plone++collective.playlist/collectiveplaylist.js"></script>
 
         <tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
         <style type="text/css" tal:content="structure view/css_collectiveplaylist"/>
-
         <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
     </body>
 </html>

@@ -14,7 +14,7 @@ define([
     },
     init: function() {
       var that = this;
-      that.$el.append(' <b>collective.playlist was here!</b>');
+      // that.$el.append(' <b>collective.playlist was here!</b>');
     }
   });
 

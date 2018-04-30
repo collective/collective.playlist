@@ -53,7 +53,6 @@
     for="collective.playlist.content.playlist.IPlaylist"
     layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
     class=".views.PlaylistView"
-    template="templates/playlistview.pt"
     permission="zope2.View"
     />
 
