@@ -13,6 +13,7 @@ htmlcov/
 include/
 lib/
 local/
+temp_resources/
 parts/
 src/*
 test.plone_addon/
@@ -42,3 +43,5 @@ man
 etc
 jupyternotebooks
 share
+Gruntfile.js
+package*.json

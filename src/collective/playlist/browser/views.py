@@ -5,6 +5,7 @@ from collective.playlist import ALLOWED_AUDIOTYPES
 from plone import api
 from plone.dexterity.browser.view import DefaultView
 from plone.memoize import ram
+from Products.CMFPlone.resources import add_bundle_on_request
 from time import time
 
 import logging
@@ -14,6 +15,11 @@ logger = logging.getLogger(__name__)
 class PlaylistView(DefaultView):
     """
     """
+
+    def __call__(self):
+        add_bundle_on_request(self.request, 'collectiveplaylist')
+        add_bundle_on_request(self.request, 'jplayerplaylist')
+
 
     def _dict_tracks(self):
         """ list of track dictionaries
@@ -63,7 +69,7 @@ class PlaylistView(DefaultView):
             // removeTime: 0,
             // shuffleTime: 0
         }},
-        swfPath: "/++resource++collective.playlist",
+        swfPath: "/++plone++collective.playlist",
         solution: 'html, flash',
         supplied: "mp3, oga, ogg, wav",
         wmode: "window",

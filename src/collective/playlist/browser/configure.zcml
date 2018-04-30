@@ -12,18 +12,23 @@
       />
 
   <!-- Publish static files -->
-  <!-- <plone:static
+  <plone:static
       name="collective.playlist"
       type="plone"
       directory="static"
-      /> -->
-  <browser:resourceDirectory
+      />
+  <plone:static
+      name="collective.playlist.extern"
+      type="plone"
+      directory="static-extern"
+      />      
+  <!-- <browser:resourceDirectory
     name="collective.playlist"
     directory="static" />
 
   <browser:resourceDirectory
     name="collective.playlist.extern"
-    directory="static-extern" />
+    directory="static-extern" /> -->
 
 
     <browser:page

@@ -52,14 +52,14 @@ def _create_content(portal):
                 id=track_id,
             )
             track.audiofile = _load_file(track_number)
-            api.content.transition(obj=track, transition='publish')
+            api.content.transition(obj=track, to_state='published')
 
         # NOTE: if your plone site is not a vanilla plone
         # you can have different workflows on folders and files
         # or different transitions names so this could fail
         # and you'll need to publish the tracks as well
         # or do that manually TTW.
-        api.content.transition(obj=playlist, transition='publish')
+        api.content.transition(obj=playlist, to_state='published')
 
 
 def _load_file(track_number):

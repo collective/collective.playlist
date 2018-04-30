@@ -1,0 +1,2 @@
+define("pat-collectiveplaylist",["jquery","pat-base"],function(e,t){"use strict";return t.extend({name:"pat-collectiveplaylist",trigger:".pat-collectiveplaylist",parser:"mockup",defaults:{},init:function(){this.$el.append(" <b>collective.playlist was here</b>")}})}),require(["pat-collectiveplaylist"],function(){"use strict"}),define("/Users/ksuess/Plone/playlist/src/collective/playlist/browser/static/bundle-collectiveplaylist.js",function(){});
+//# sourceMappingURL=collectiveplaylist.js.map
