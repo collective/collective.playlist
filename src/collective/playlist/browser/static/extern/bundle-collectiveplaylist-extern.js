@@ -1,7 +1,6 @@
 require([
-  'pat-collectiveplaylist'
+  'jplayerscript',
+  'jplayerplaylistscript'
 ], function() {
   'use strict';
 });
-
-

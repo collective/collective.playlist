@@ -17,11 +17,11 @@
       type="plone"
       directory="static"
       />
-  <plone:static
+  <!-- <plone:static
       name="collective.playlist.extern"
       type="plone"
       directory="static-extern"
-      />      
+      />   -->    
   <!-- <browser:resourceDirectory
     name="collective.playlist"
     directory="static" />
@@ -40,9 +40,9 @@
 
 
   <browser:viewlet
-    name="bluechurch.playerviewlet"
+    name="bluechurch.playerbuttonviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    template="templates/playerviewlet.pt"
+    template="templates/playerbuttonviewlet.pt"
     class=".viewlets.PlaylistViewlet"
     layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
     permission="zope2.View"
@@ -55,6 +55,25 @@
     class=".views.PlaylistView"
     permission="zope2.View"
     />
+
+
+    <browser:page
+      name="playlistfooterview"
+      for="collective.playlist.content.playlist.IPlaylist"
+      layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+      class=".views.PlaylistFooterView"
+      permission="zope2.View"
+      />
+      
+  <browser:viewlet
+    name="bluechurch.playerfooterviewlet"
+    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    template="templates/playerfooterviewlet.pt"
+    class=".viewlets.PlaylistFooterViewlet"
+    layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+    permission="zope2.View"
+    />
+    
 
   <adapter
     for="Products.CMFCore.interfaces.IFolderish

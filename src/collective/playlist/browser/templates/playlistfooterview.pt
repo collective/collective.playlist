@@ -1,33 +1,3 @@
-<html id="playlistview"
-    i18n:domain="collective.playlist">
-    <head>
-        <title tal:content="context/Title|nothing">Playlist</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.8">
-        
-        <!-- <link tal:replace="structure provider:plone.htmlhead.links" /> -->
-        <!-- <metal:styleslot define-slot="style_slot" /> -->
-        <!-- <tal:scripts replace="structure provider:plone.scripts" /> -->
-
-    </head>
-
-    <body>
-        <header>
-            <div>
-                <tal:define tal:define="img_src view/getSiteLogo|nothing">
-                    <a tal:condition="img_src"
-                        id="portal-logo" href="/" target="_blank">
-                        <img class="" src="/logo.png" alt="Plone site" title="Plone site"
-                            tal:attributes="title context/Title|nothing;
-                                alt context/Title|nothing;
-                                src img_src">
-                    </a>
-                </tal:define>
-            </div>
-
-
-            <!-- <h3 tal:content="context/Title|nothing">Playlist</h3> -->
-        </header>
 
         <ul class="admin_add_and_edit" tal:condition="view/can_add_and_edit"
             tal:define="portal_state context/@@plone_portal_state;
@@ -96,21 +66,22 @@
         </div>
 
         <div id="copyright" tal:content="structure view/copyright|nothing">copyright</div>
+        <!-- <div tal:content="view/getTracks"></div> -->
 
+        <tal:resources>
+          <!-- <link tal:replace="structure provider:plone.htmlhead.links" /> -->
+          <!-- <metal:styleslot define-slot="style_slot" /> -->
+          <!-- <tal:scripts replace="structure provider:plone.scripts" /> -->
+        </tal:resources>
 
-
-        <script type="text/javascript" src="++plone++collective.playlist/extern/require.js"></script>
-        <!-- <script type="text/javascript" src="++plone++static/components/requirejs/require.js"></script> -->
         <script tal:condition="view/include_jquery"
             type="text/javascript" src="++plone++collective.playlist/extern/jquery.min.js"></script>
 
         <link rel="stylesheet" type="text/css" data-bundle="collectiveplaylist"
              href="++plone++collective.playlist/collectiveplaylist.css">
         <script type="text/javascript" data-bundle="collectiveplaylist"
-             src="http://localhost:8080/Plone/++plone++collective.playlist/collectiveplaylist.js"></script>
+             src="++plone++collective.playlist/collectiveplaylist.js"></script>
 
         <tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
         <style type="text/css" tal:content="structure view/css_collectiveplaylist"/>
         <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
-    </body>
-</html>

@@ -1,5 +1,3 @@
-// TODO Pattern https://training.plone.org/5/javascript/exercises/5.html
-
 define([
   'jquery',
   'pat-base',

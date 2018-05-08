@@ -25,10 +25,7 @@
     <records prefix="plone.bundles/collectiveplaylist"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
-        <element>fontawesome</element>
-        <element>jplayerplayliststyle</element>
-        <element>jplayerscript</element>
-        <element>jplayerplaylistscript</element>
+        <element>bundle-collectiveplaylist-extern</element>
         <element>bundle-collectiveplaylist</element>
       </value>
       <!-- <value key="merge_with">default</value> -->
@@ -48,41 +45,56 @@
     
     <!-- <records prefix="plone.resources/foo"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++plone++collective.playlist.extern/foo.js</value>
-      <value key="css">++plone++collective.playlist.extern/foo.css</value>
+      <value key="js">++plone++collective.playlist/foo.js</value>
+      <value key="css">++plone++collective.playlist/foo.css</value>
     </records>   -->
     
+    <records prefix="plone.resources/requirejsNEW"
+                  interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+          <value key="js">++plone++collective.playlist/extern/require.js</value>
+        </records>     
     <records prefix="plone.resources/jqueryNEW"
                   interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-          <value key="js">++plone++collective.playlist.extern/jquery.min.js</value>
+          <value key="js">++plone++collective.playlist/extern/jquery.min.js</value>
         </records> 
-    <records prefix="plone.resources/fontawesome"
+        
+    <!-- <records prefix="plone.resources/fontawesome"
                   interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-          <value key="css">++plone++collective.playlist.extern/font-awesome.min.css</value>
-        </records>
+          <value key="css">++plone++collective.playlist/extern/font-awesome.min.css</value>
+        </records> -->
         
     <records prefix="plone.resources/jplayerplayliststyle"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="css">++plone++collective.playlist.extern/jplayer-flat-audio-theme.css</value>
+      <value key="css">++plone++collective.playlist/extern/jplayer-flat-audio-theme.css</value>
     </records>
     <records prefix="plone.resources/jplayerscript"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++plone++collective.playlist.extern/jquery.jplayer.min.js</value>
+      <value key="js">++plone++collective.playlist/extern/jquery.jplayer.js</value>
     </records>
     <records prefix="plone.resources/jplayerplaylistscript"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++plone++collective.playlist.extern/jplayer.playlist.min.js</value>
+      <value key="js">++plone++collective.playlist/extern/jplayer.playlist.min.js</value>
+    </records>
+
+
+    <!-- resource bundle -->
+    <records prefix="plone.resources/bundle-collectiveplaylist-extern"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++collective.playlist/extern/bundle-collectiveplaylist-extern.js</value>
+      <value key="css">
+        <element>++plone++collective.playlist/extern/less/fontawesome.less</element>
+        <element>++plone++collective.playlist/extern/less/fa-regular.less</element>
+        <element>++plone++collective.playlist/extern/jplayer-flat-audio-theme.css</element>
+      </value>
     </records>
 
 
     <!-- EXTERNAL BUNDLE -->
 
-    <!--    <records prefix="plone.bundles/jplayerplaylist"
+    <!-- <records prefix="plone.bundles/jplayerplaylist"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
-        <element>jplayerplayliststyle</element>
-        <element>jplayerscript</element>
-        <element>jplayerplaylistscript</element>
+        <element>bundle-collectiveplaylist-extern</element>
       </value>
       <value key="enabled">False</value>
       <value key="last_compilation">2018-04-01 00:00:00</value>
@@ -90,7 +102,7 @@
       <value key="stub_js_modules">
         <element>jquery</element>
       </value>
-    </records>
-     -->
+    </records> -->
+
     
 </registry>

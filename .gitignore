@@ -1,47 +1,55 @@
-.coverage
+*.py[co]
+
+# Packages
+*.egg
 *.egg-info
-*.log
-*.mo
-*.py?
-*.swp
-# dirs
-bin/
-buildout-cache/
-develop-eggs/
-eggs/
-htmlcov/
-include/
-lib/
-local/
-temp_resources/
-parts/
-src/*
-test.plone_addon/
-var/
-# files
-.installed.cfg
-.mr.developer.cfg
-lib64
-log.html
-output.xml
+/dist
+/build
+/eggs
+/parts
+/bin
+/var
+/sdist
+/develop-eggs
+/local
+
+# Installer logs
+pip-log.txt
 pip-selfcheck.json
-report.html
-# excludes
-!.coveragerc
-!.editorconfig
-!.gitattributes
-!.gitignore
-!.gitkeep
-!.travis.yml
-!src/collective
-node_modules
+
+# Testing
+/.coverage
+/.tox
+/htmlcov
+/selenium
+
+# Translations
+*.mo
+
+# editors
+*.sublime*
+
+# mr.developer
+/.mr.developer.cfg
+/.installed.cfg
+/devsrc
+
+# developement
+develop.cfg
+/.project
+/.pydevproject
+/.settings
 .DS_Store
-*.pyc
-*.pyo
-selenium
-man
-etc
-jupyternotebooks
-share
+*.swp
+/temp_resources
+/node_modules
 Gruntfile.js
-package*.json
+package.json
+package-lock.json
+/share
+/jupyternotebooks
+
+# virtualenv
+/include
+/lib
+/.Python

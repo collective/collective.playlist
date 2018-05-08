@@ -34,3 +34,13 @@ class PlaylistViewlet(base.ViewletBase):
     def href(self):
         result = self._playlists()[0].getObject().absolute_url()
         return result
+
+
+class PlaylistFooterViewlet(PlaylistViewlet):
+    """
+    """
+
+    @ram.cache(lambda *args: time() // 3)
+    def playlist(self):
+        result = self._playlists()[0].getObject()
+        return result

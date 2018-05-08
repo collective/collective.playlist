@@ -1,6 +1,6 @@
-<tal:playerviewlet tal:condition="view/show">
+<tal:playerbuttonviewlet tal:condition="view/show">
     <style type="text/css">
-        #playerviewlet {
+        #playerbuttonviewlet {
             font-size: 5rem;
         }
         a.playlist-button,
@@ -15,7 +15,7 @@
 
     </style>
 
-    <div id="playerviewlet">
+    <div id="playerbuttonviewlet">
         <a class="playlist-button"
             href="./playlist-mocoloco"
             target="_blank"
@@ -30,4 +30,4 @@
             return false;
         });
     </script>
-</tal:playerviewlet>
+</tal:playerbuttonviewlet>
