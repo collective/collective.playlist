@@ -12,7 +12,7 @@ define([
     },
     init: function() {
             var tracks = $('#tracks').html();
-            tracks = tracks.replace(/u'/g, '\'').replace(/'/g, '"');
+            tracks = tracks.replace(/'/g, '"');
             tracks = JSON.parse(tracks);
             console.log(tracks);
         

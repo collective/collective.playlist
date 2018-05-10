@@ -1,4 +1,4 @@
-<div id="tracks" class="hidden" tal:content="view/getTracks">Tracks</div>
+<div id="tracks" class="hidden" tal:content="view/getJSONTracks">Tracks</div>
 
 <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
 

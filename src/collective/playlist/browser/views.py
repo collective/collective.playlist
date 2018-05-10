@@ -53,6 +53,11 @@ class PlaylistBaseView(DefaultView):
             tracklist.append({'title': title, format: address})
         return tracklist
 
+    def getJSONTracks(self):
+        """ list of json track dictionaries
+        """
+        return json.dumps(self.getTracks())
+        
     # @ram.cache(lambda *args: time() // 3)
     def js_collectiveplaylist(self):
         """ OBSOLETE
