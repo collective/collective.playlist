@@ -16,6 +16,10 @@
 # Installer logs
 pip-log.txt
 pip-selfcheck.json
+geckodriver.log
+log.html
+report.html
+output.xml
 
 # Testing
 /.coverage

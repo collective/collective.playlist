@@ -55,9 +55,10 @@ class PlaylistBaseView(DefaultView):
 
     # @ram.cache(lambda *args: time() // 3)
     def js_collectiveplaylist(self):
-        """ Initialize JPlayer"""
+        """ OBSOLETE
+        
+        Initialize JPlayer"""
         js = u""" $(document).ready(function(){{
-
     new jPlayerPlaylist({{
         jPlayer: "#jquery_jplayer_playlist",
         cssSelectorAncestor: "#jp_container_playlist"
@@ -120,7 +121,7 @@ class PlaylistBaseView(DefaultView):
             result += tag.format(ss)
         return result
 
-    @ram.cache(lambda *args: time() // 1)  # one second
+
     def copyright(self):
         context = self.context
         cr = context.copyright.output
@@ -130,21 +131,12 @@ class PlaylistBaseView(DefaultView):
         return True
 
 
-class PlaylistView(PlaylistBaseView):
+class PlaylistPopupView(PlaylistBaseView):
     """
     """
-    template = ViewPageTemplateFile("templates/playlistview.pt")
+    template = ViewPageTemplateFile("templates/playlistpopupview.pt")
 
     def __call__(self):
-        """ TODO add resources to view
-        """
-        # # remove_bundle_on_request(self.request, 'jquery') # TODO remove old jquery version
-        # remove_bundle_on_request(self.request, 'plone')
-        # remove_bundle_on_request(self.request, 'plone-logged-in')
-        # remove_bundle_on_request(self.request, 'plone-legacy')
-        #
-        # add_resource_on_request(self.request, 'jqueryNEW')
-        # add_bundle_on_request(self.request, 'collectiveplaylist')
         return self.template()
     
 
@@ -154,15 +146,6 @@ class PlaylistFooterView(PlaylistBaseView):
     template = ViewPageTemplateFile("templates/playlistfooterview.pt")
 
     def __call__(self):
-        """ TODO add resources to view
-        """
-        # # remove_bundle_on_request(self.request, 'jquery') # TODO remove old jquery version
-        # remove_bundle_on_request(self.request, 'plone')
-        # remove_bundle_on_request(self.request, 'plone-logged-in')
-        # remove_bundle_on_request(self.request, 'plone-legacy')
-        #
-        # # add_resource_on_request(self.request, 'jqueryNEW')
-        # add_bundle_on_request(self.request, 'collectiveplaylist')
         return self.template()
 
     def include_jquery(self):

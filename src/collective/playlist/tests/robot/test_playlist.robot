@@ -42,6 +42,7 @@ Scenario: As a site administrator I can add a playlist
     Given a logged-in site administrator
         and an add playlist form
     When I type 'My Playlist' into the title field
+        and Scroll Page
         and I submit the form
     Then a playlist with the title 'My Playlist' has been created
 

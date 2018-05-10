@@ -16,9 +16,20 @@ Retract object
 Select pop up window
     Select Window  NEW
     Log Location
+    
+Scroll Page
+    Scroll Page To Location    0    2000
+
+Scroll Page To Location
+    [Arguments]    ${x_location}    ${y_location}
+    Execute JavaScript    window.scrollTo(${x_location},${y_location})
+
 
 # --- Given ------------------------------------------------------------------
 
+a logged-in manager
+  Enable autologin as  Manager
+  
 a logged-in site administrator
   Enable autologin as  Site Administrator  Contributor  Reviewer
   

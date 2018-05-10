@@ -1,8 +1,6 @@
 # coding: utf-8
 from plone import api
 from plone.app.layout.viewlets import common as base
-from plone.memoize import ram
-from time import time
 
 import logging
 
@@ -10,11 +8,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class PlaylistViewlet(base.ViewletBase):
+class PlaylistButtonViewlet(base.ViewletBase):
     """
     """
 
-    @ram.cache(lambda *args: time() // 3)
     def _playlists(self):
         """Anonymous gets only published playlists
         """
@@ -23,24 +20,21 @@ class PlaylistViewlet(base.ViewletBase):
                         sort_order='reverse')
         return list(items)
 
-    @ram.cache(lambda *args: time() // 3)
     def show(self):
         """ Show play button only if published playlist exists
         """
         playlists = self._playlists()
         return playlists != []
 
-    @ram.cache(lambda *args: time() // 3)
     def href(self):
         result = self._playlists()[0].getObject().absolute_url()
-        return result
+        return result + '/@@playlistpopupview'
 
 
-class PlaylistFooterViewlet(PlaylistViewlet):
+class PlaylistFooterViewlet(PlaylistButtonViewlet):
     """
     """
 
-    @ram.cache(lambda *args: time() // 3)
     def playlist(self):
         result = self._playlists()[0].getObject()
         return result

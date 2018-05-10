@@ -1,13 +1,54 @@
-<html id="playlistview"
+<html id="playlistpopupview"
     i18n:domain="collective.playlist">
     <head>
         <title tal:content="context/Title|nothing">Playlist</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
         
-        <!-- <link tal:replace="structure provider:plone.htmlhead.links" /> -->
-        <!-- <metal:styleslot define-slot="style_slot" /> -->
-        <!-- <tal:scripts replace="structure provider:plone.scripts" /> -->
+        <script type="text/javascript" src="++plone++collective.playlist/extern/require.js"></script>
+        <!-- <script type="text/javascript" src="++plone++static/components/requirejs/require.js"></script> -->
+        <script tal:condition="view/include_jquery"
+            type="text/javascript" src="++plone++collective.playlist/extern/jquery.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" data-bundle="collectiveplaylist"
+             href="++plone++collective.playlist/collectiveplaylist.css">
+        <script type="text/javascript" data-bundle="collectiveplaylist"
+             src="http://localhost:8080/Plone/++plone++collective.playlist/collectiveplaylist.js"></script>
+
+        <tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
+        <style type="text/css" tal:content="structure view/css_collectiveplaylist"/>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var tracks = $('#tracks').html();
+                tracks = tracks.replace(/u'/g, '\'').replace(/'/g, '"');
+                tracks = JSON.parse(tracks);
+                console.log(tracks);
+        
+                new jPlayerPlaylist({
+                  jPlayer: '#jquery_jplayer_playlist',
+                  cssSelectorAncestor: '#jp_container_playlist'
+                }, tracks, {
+                  volume: 0.85,
+                  playlistOptions: {
+                    autoPlay: false,
+                    // displayTime: 0,
+                    // addTime: 0,
+                    // removeTime: 0,
+                    // shuffleTime: 0
+                  },
+                  swfPath: '/++plone++collective.playlist',
+                  solution: 'html, flash',
+                  supplied: 'mp3, oga, ogg, wav',
+                  wmode: 'window',
+                  useStateClassSkin: true,
+                  autoBlur: false,
+                  smoothPlayBar: true,
+                  keyEnabled: true,
+                  remainingDuration: true
+                }); // new jPlayerPlaylist
+            })
+        </script>
 
     </head>
 
@@ -46,7 +87,8 @@
                 i18n:translate="add track">add track</a></li>
         </ul>
 
-
+        <div id="tracks" class="hidden" tal:content="view/getTracks">Tracks</div>
+        
         <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
 
         <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
@@ -98,19 +140,5 @@
         <div id="copyright" tal:content="structure view/copyright|nothing">copyright</div>
 
 
-
-        <script type="text/javascript" src="++plone++collective.playlist/extern/require.js"></script>
-        <!-- <script type="text/javascript" src="++plone++static/components/requirejs/require.js"></script> -->
-        <script tal:condition="view/include_jquery"
-            type="text/javascript" src="++plone++collective.playlist/extern/jquery.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" data-bundle="collectiveplaylist"
-             href="++plone++collective.playlist/collectiveplaylist.css">
-        <script type="text/javascript" data-bundle="collectiveplaylist"
-             src="http://localhost:8080/Plone/++plone++collective.playlist/collectiveplaylist.js"></script>
-
-        <tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
-        <style type="text/css" tal:content="structure view/css_collectiveplaylist"/>
-        <script type="text/javascript" tal:content="structure view/js_collectiveplaylist"></script>
     </body>
 </html>

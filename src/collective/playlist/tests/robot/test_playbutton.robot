@@ -21,6 +21,16 @@ Scenario: Play button is shown if and only if a published playlist exists
     # Log in as site administrator
     Given a logged-in site administrator
     Go to homepage
+    a play button is not visible
+    
+    Given a logged-in manager
+    Go To  ${PLONE_URL}/@@manage-viewlets
+    # make playbutton visible:
+    Go To  ${PLONE_URL}/@@manage-viewlets?show=plone.portalheader%3Acollective.playlist.playerbuttonviewlet
+    Click Button  name=form.button.confirm
+    
+    Given a logged-in site administrator
+    Go to homepage
     a play button is visible
     Click play button
     Select pop up window

@@ -6,8 +6,24 @@
 collective.playlist
 ===================
 
-collective.playlist provides playlist and track content types and a player.
+collective.playlist provides a playlist and a track content type and a player.
 
+Sticky Footer
+*************
+
+.. figure:: stickyplayer.png
+    :width: 500px
+    :align: center
+    :alt: Sticky Player
+
+    Sticky Player
+
+
+Popup Player
+************
+
+is per default deactivated. You can activate it via @@manage-viewlets view like
+http://localhost:8080/Plone/@@manage-viewlets
 
 .. figure:: playlist.png
     :width: 500px

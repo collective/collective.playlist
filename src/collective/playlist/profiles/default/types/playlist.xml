@@ -49,12 +49,11 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++playlist</property>
-  <property name="default_view">playlistview</property>
+  <property name="default_view">listing_view</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">playlistview</property>
+  <property name="immediate_view">view</property>
   <property name="view_methods">
-    <element value="playlistview"/>
-    <element value="view"/>
+    <element value="listing_view"/>
   </property>
 
   <!-- Method aliases -->

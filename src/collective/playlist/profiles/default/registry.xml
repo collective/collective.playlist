@@ -29,14 +29,14 @@
         <element>bundle-collectiveplaylist</element>
       </value>
       <!-- <value key="merge_with">default</value> -->
-      <value key="enabled">False</value>
+      <value key="enabled">True</value>
       <value key="jscompilation">++plone++collective.playlist/collectiveplaylist.js</value>
       <value key="csscompilation">++plone++collective.playlist/collectiveplaylist.css</value>
       <value key="last_compilation">2018-04-01 00:00:00</value>
       <value key="compile">True</value>
       <value key="stub_js_modules">
         <element>jquery</element>
-        <element>pat-base</element>
+        <!-- <element>pat-base</element> -->
       </value>
     </records>
 
@@ -69,7 +69,7 @@
     </records>
     <records prefix="plone.resources/jplayerscript"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++plone++collective.playlist/extern/jquery.jplayer.js</value>
+      <value key="js">++plone++collective.playlist/extern/jquery.jplayer.min.js</value>
     </records>
     <records prefix="plone.resources/jplayerplaylistscript"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>

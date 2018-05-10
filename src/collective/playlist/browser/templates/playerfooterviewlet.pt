@@ -1,45 +1,16 @@
 <tal:playerfooterviewlet tal:condition="view/show">
     
     <div id="playerfooterviewlet">
-        <style type="text/css">                    
-            .contenttype-playlist::before    { content: '\e801'; }
-            .contenttype-track::before       { content: '\e811'; }
 
-            html {
-                background-color: transparent;
-            }
-            
-            #playerfooterviewlet {
-                font-size: 1rem; 
-                position: fixed;
-                bottom: 0px;
-                width: 100%;
-            }
-            #playerfooterviewlet header,
-            #playerfooterviewlet #copyright  {
-                display: none;
-            }
-            
-        </style>
-        
-
-        <div tal:content="structure context/playlist/playlistfooterview"></div>
+        <div tal:content="structure context/playlist/@@playlistfooterview"></div>
 
         <script type="text/javascript" src="++plone++collective.playlist/extern/jquery.pjax.js"></script>
         <script type="text/javascript">
             $("body").append($("#playerfooterviewlet"));
             
-            $(document).pjax('div.outer-wrapper a', '#main-container', {fragment:'#main-container',});
+            $(document).pjax('div.outer-wrapper a', 'div.outer-wrapper', 
+                {fragment:'div.outer-wrapper', timeout: 5000});
         </script>
     </div>
 
 </tal:playerfooterviewlet>
-
-
-
-<!-- <script type="text/javascript">
-    $("body").wrapInner("<div id='pjax-container' />");
-    $("#pjax-container").after($("#playerfooterviewlet"));
-
-    $(document).pjax('#pjax-container a', '#pjax-container', {fragment:'div.outer-wrapper',});
-</script> -->

@@ -19,17 +19,22 @@
   // font-weight: 400;
 }
 
+.hidden {
+    display: none;
+}
 
 // JPlayer controls
 //
 .jp-audio {
     .jp-controls,
-    .jp-progress .jp-seek-bar,
     .jp-volume-controls,
     .jp-toggles {
         background-color: @backgroundcolor;
-        opacity: 0.85;
-        filter: alpha(opacity=85);
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+    }
+    .jp-progress .jp-seek-bar {
+        background-color: lighten(@backgroundcolor, 10%);        
     }
     .jp-progress {
         background-color: #374F68;
@@ -69,6 +74,9 @@
             color: #2980B9;
           }
         }
+    }
+    .jp-volume-controls {
+        width: 60px;
     }
     .jp-playlist {
         top: 3rem;
@@ -112,6 +120,7 @@
 
 
 @media (max-width: 499px) {
+    @toggleswidth: 110px;
     .jp-audio .jp-type-playlist {
         .jp-controls {
             // width: 180px;
@@ -121,9 +130,13 @@
             & * {
                 font-size: 30px !important;
             }
+            .jp-stop {
+                display: none;
+            }
         }
         .jp-toggles {
-            width: 110px;
+            width: @toggleswidth;
+            right: 0;
             & * {
                 font-size: 30px !important;
             }
@@ -150,7 +163,7 @@ ul.admin_add_and_edit {
     display: None;
 }
 
-html#playlistview {
+html#playlistpopupview {
     box-sizing: border-box;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -165,7 +178,7 @@ html#playlistview {
         font-size: 14px;
         font-weight: 500;
         line-height: 1.42857143;
-        margin: 0.5em;
+        margin: 0;
     }
 
     .clearfix {
@@ -215,6 +228,21 @@ html#playlistview {
 // Footer Viewlet
 //
 #playerfooterviewlet {
+    .contenttype-playlist::before    { content: '\e801'; }
+    .contenttype-track::before       { content: '\e811'; }
+    font-size: 1rem; 
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    right: 0;
+    z-index: 2;
+    header,
+    #copyright  {
+        display: none;
+    }
+    #jp_container_playlist {
+        background-color: @backgroundcolor; 
+    }
     .jp-audio {
         .jp-playlist {
             top: 5rem;
@@ -232,11 +260,18 @@ html#playlistview {
                         }
                         a.jp-playlist-current {
                             position: absolute;
-                            top: -3.5rem;
+                            top: -2.4em;
                         }
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width: 499px) {
+    #playerfooterviewlet {
+        .jp-audio .jp-playlist {
+            display: none;
         }
     }
 }

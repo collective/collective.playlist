@@ -40,19 +40,19 @@
 
 
   <browser:viewlet
-    name="bluechurch.playerbuttonviewlet"
+    name="collective.playlist.playerbuttonviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
     template="templates/playerbuttonviewlet.pt"
-    class=".viewlets.PlaylistViewlet"
+    class=".viewlets.PlaylistButtonViewlet"
     layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
     permission="zope2.View"
     />
 
   <browser:page
-    name="playlistview"
+    name="playlistpopupview"
     for="collective.playlist.content.playlist.IPlaylist"
     layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
-    class=".views.PlaylistView"
+    class=".views.PlaylistPopupView"
     permission="zope2.View"
     />
 
@@ -66,7 +66,7 @@
       />
       
   <browser:viewlet
-    name="bluechurch.playerfooterviewlet"
+    name="collective.playlist.playerfooterviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
     template="templates/playerfooterviewlet.pt"
     class=".viewlets.PlaylistFooterViewlet"

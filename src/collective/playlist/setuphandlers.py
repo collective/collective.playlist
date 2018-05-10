@@ -21,6 +21,7 @@ def post_install(context):
     # Do something at the end of the installation of this package.
     portal = api.portal.get()
     _create_content(portal)
+    _deactivate_popup(portal)
 
 
 def uninstall(context):
@@ -74,3 +75,8 @@ def _load_file(track_number):
         data=open(filename, 'r').read(),
         filename=u'track-{0}.mp3'.format(track_number),
     )
+
+
+def _deactivate_popup(portal):
+    view = portal.restrictedTraverse('@@manage-viewlets')
+    view.hide('plone.portalheader', 'collective.playlist.playerbuttonviewlet')
