@@ -14,7 +14,6 @@ define([
             var tracks = $('#tracks').html();
             tracks = tracks.replace(/'/g, '"');
             tracks = JSON.parse(tracks);
-            console.log(tracks);
         
             new jPlayerPlaylist({
               jPlayer: '#jquery_jplayer_playlist',

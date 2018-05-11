@@ -6,24 +6,39 @@
 collective.playlist
 ===================
 
-collective.playlist provides a playlist and a track content type and a player.
+Player for Audio Playlist
+---------------------------
+
+Summary
+*************************
+ 
+collective.playlist provides a playlist and a track content type. The player is per default a sticky footer. Optional as an alternative is a player in a pop up window that can be launched via a play button.
+
 
 Sticky Footer
 *************
 
+The site is navigable while the player continues to play.
+
 .. figure:: stickyplayer.png
     :width: 500px
     :align: center
-    :alt: Sticky Player
+    :alt: Sticky Footer Player
 
-    Sticky Player
+    Sticky Footer Player
 
+.. figure:: stickyplayer_mobile.png
+    :width: 210px
+    :align: center
+    :alt: Sticky Footer Player Mobile
 
-Popup Player
-************
+    Sticky Footer Player on Mobile Device
+    
 
-is per default deactivated. You can activate it via @@manage-viewlets view like
-http://localhost:8080/Plone/@@manage-viewlets
+Pop Up Player
+*************
+
+A click on the play button opens a window with playlist and player.
 
 .. figure:: playlist.png
     :width: 500px
@@ -38,9 +53,8 @@ http://localhost:8080/Plone/@@manage-viewlets
     :align: center
     :alt: Playlist Mobile evices
 
-    Playlist mobile
+    Playlist on Mobile Device
 
-Uses JPlayer_.
 
 
 Documentation
@@ -51,17 +65,28 @@ Initial playlist
 
 An initial playlist with tracks is created at /playlist.
 
-Playlist
-*********
+The Add-On uses JPlayer_.
+
+Sticky Footer
+*************
+
+The site is navigable while the player continues to play thanks to pjax_. Pjax works with browsers that support the history.pushState() API. When the API isn't supported, Pjax goes into fallback mode (and it just does nothing). `Browser Support`_
+
+The sticky footer is shown if and only if a published playlist exists. For a qualified user it's shown anyway.
+
+Pop Up Player
+*************
+
+The pop up player is per default deactivated. You can activate it via @@manage-viewlets view like
+localhost:8080/Plone/@@manage-viewlets
 
 A play button is shown on top of each page if and only if a published playlist exists. For a qualified user it's shown anyway.
 
-Click the play button to open the player. A menu to edit the playlist is presented to qualified users.
+Click the play button to open the player. A menu to edit the playlist and its tracks is presented to qualified users.
 
 
 Customizations
 --------------
-
 
 Layout
 ***********
@@ -78,8 +103,8 @@ Change Font
 
     Use your font
 
-Background Image for your Playlist
-************************************
+Background Image for your Pop Up Playlist
+*****************************************
 
 Upload an image "background.jpg" to your Plone-Site.
 
@@ -119,6 +144,12 @@ Plone Version Compatibility
 
 Plone 5
 
+.. image:: https://travis-ci.org/ksuess/collective.playlist.svg?branch=master
+    :target: https://travis-ci.org/ksuess/collective.playlist
+    
+.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master
+    :target: https://coveralls.io/github/ksuess/collective.playlist?branch=master
+
 
 Contribute
 ----------
@@ -126,12 +157,6 @@ Contribute
 - Issue Tracker: https://github.com/collective/collective.playlist/issues
 - Source Code: https://github.com/collective/collective.playlist
 
-
-.. image:: https://travis-ci.org/ksuess/collective.playlist.svg?branch=master
-    :target: https://travis-ci.org/ksuess/collective.playlist
-    
-.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master
-    :target: https://coveralls.io/github/ksuess/collective.playlist?branch=master
 
 
 License
@@ -149,6 +174,12 @@ Author
 
 - Katja Süss, Rohberg ( @ksuess )
 
+
+Footnotes
+---------
+
 .. target-notes::
 
 .. _JPlayer: http://jplayer.org/latest/demo-02-multi/
+.. _pjax: https://github.com/defunkt/jquery-pjax
+.. _Browser Support: https://css-tricks.com/using-the-html5-history-api/#browser-support
