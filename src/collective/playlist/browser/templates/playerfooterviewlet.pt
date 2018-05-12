@@ -1,16 +1,5 @@
-<tal:playerfooterviewlet tal:condition="view/show">
-    
+<tal:playerfooterviewlet tal:condition="view/show">    
     <div id="playerfooterviewlet">
-
         <div tal:content="structure context/playlist/@@playlistfooterview"></div>
-
-        <script type="text/javascript" src="++plone++collective.playlist/extern/jquery.pjax.js"></script>
-        <script type="text/javascript">
-            $("body").append($("#playerfooterviewlet"));
-            
-            $(document).pjax('div.outer-wrapper a', 'div.outer-wrapper', 
-                {fragment:'div.outer-wrapper', timeout: 5000});
-        </script>
     </div>
-
 </tal:playerfooterviewlet>

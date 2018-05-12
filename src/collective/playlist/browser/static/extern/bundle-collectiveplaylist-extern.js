@@ -1,6 +1,7 @@
 require([
-  'jplayerscript',
-  'jplayerplaylistscript'
+    'pjaxscript',
+    'jplayerscript',
+    'jplayerplaylistscript'
 ], function() {
-  'use strict';
+    'use strict';
 });
