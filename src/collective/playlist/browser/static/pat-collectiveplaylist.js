@@ -2,40 +2,31 @@ define([
   'jquery',
   'pat-base',
   'pat-registry',
-], function($, Base, registry) {
+  'pjaxscript',
+  'jplayerscript',
+  'jplayerplaylistscript'
+], function($, Base, registry, P) {
   'use strict';
 
   var Pattern = Base.extend({
     name: 'pat-collectiveplaylist',
     trigger: '#jquery_jplayer_playlist',
-    parser: 'mockup',
-    defaults: {
-    },
+    
     init: function() {
+        var that = this;
+        
         // pjax
         $("body").append($("#playerfooterviewlet"));
         
-        $(document).pjax('div.outer-wrapper a', 'div.outer-wrapper', {
-            fragment:'div.outer-wrapper', 
-            timeout: 5000
-            });
+        function whenContainerReady() {
+            registry.scan(document.body);
+        };
+        var pjax = new P({
+          elements: "div.outer-wrapper a",
+          selectors: ["#edit-zone", "div.outer-wrapper"]
+        });        
+        document.addEventListener("pjax:success", whenContainerReady);
         
-        $('div.outer-wrapper').on('pjax:success', function () {
-            $.pjax({ // TODO apply toolbar pattern: ? ajax_load=1
-                url: window.location.href,
-                container: '#edit-zone',
-                fragment: '#edit-zone',
-                push: false,
-                timeout: 5000
-            });
-        });
-        $('#edit-zone').on('pjax:success', function () {
-            // TODO apply toolbar pattern
-            registry.scan($('#edit-zone'));
-            // if (registry.initialized) {
-            //     registry.scan(document.body, [name]);
-            // }
-        });
         
         // JPlayer
         var tracks = $('#tracks').html();
@@ -54,7 +45,6 @@ define([
             // removeTime: 0,
             // shuffleTime: 0
           },
-          swfPath: '/++plone++collective.playlist',
           solution: 'html, flash',
           supplied: 'mp3, oga, ogg, wav',
           wmode: 'window',
@@ -64,7 +54,6 @@ define([
           keyEnabled: true,
           remainingDuration: true
         }); // new jPlayerPlaylist
-
       
     }
   });

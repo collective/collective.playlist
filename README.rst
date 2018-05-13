@@ -181,5 +181,5 @@ Footnotes
 .. target-notes::
 
 .. _JPlayer: http://jplayer.org/latest/demo-02-multi/
-.. _pjax: https://github.com/defunkt/jquery-pjax
-.. _Browser Support: https://css-tricks.com/using-the-html5-history-api/#browser-support
+.. _pjax: https://github.com/MoOx/pjax
+.. _Browser Support: https://caniuse.com/#search=pushstate

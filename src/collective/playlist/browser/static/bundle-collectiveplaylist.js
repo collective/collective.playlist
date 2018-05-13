@@ -1,7 +1,10 @@
 require([
-  'pat-collectiveplaylist'
+    'pjaxscript',
+    'jplayerscript',
+    'jplayerplaylistscript',
+    'pat-collectiveplaylist'
 ], function() {
-  'use strict';
+    'use strict';
 });
 
 
