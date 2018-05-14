@@ -147,7 +147,7 @@ Plone 5
 .. image:: https://travis-ci.org/ksuess/collective.playlist.svg?branch=master
     :target: https://travis-ci.org/ksuess/collective.playlist
     
-.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master
+.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master&t=1001
     :target: https://coveralls.io/github/ksuess/collective.playlist?branch=master
 
 
