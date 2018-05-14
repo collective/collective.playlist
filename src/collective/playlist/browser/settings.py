@@ -21,7 +21,7 @@ class ISettings(Interface):
     stylesheets = schema.List(
         title=_(u'Stylesheets'),
         description=_(
-            u"Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu"),
+            u'Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu'), # noqa E501
         default=[],
         missing_value=None,
         required=False,
