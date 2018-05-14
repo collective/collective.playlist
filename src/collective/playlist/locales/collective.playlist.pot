@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-03-06 15:48+0000\n"
+"POT-Creation-Date: 2018-05-14 11:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.playlist\n"
 
-#: ../content/track.py:20
+#: ../content/track.py:14
 msgid "Audio"
 msgstr ""
 
-#: ../content/playlist.py:18
+#: ../content/playlist.py:13
 msgid "Copyright"
 msgstr ""
 
@@ -42,19 +42,19 @@ msgstr ""
 msgid "Playlist Settings"
 msgstr ""
 
-#: ../browser/settings.py:18
+#: ../browser/settings.py:16
 msgid "Some style to be applied to playlist. CSS"
 msgstr ""
 
-#: ../browser/settings.py:22
+#: ../browser/settings.py:23
 msgid "Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu"
 msgstr ""
 
-#: ../browser/settings.py:17
+#: ../browser/settings.py:15
 msgid "Style"
 msgstr ""
 
-#: ../browser/settings.py:21
+#: ../browser/settings.py:22
 msgid "Stylesheets"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:35
+#: ../browser/templates/playlistpopupview.pt:84
 msgid "add track"
 msgstr ""
 
@@ -83,18 +83,18 @@ msgstr ""
 msgid "collective.playlist (uninstall)"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:32
+#: ../browser/templates/playlistpopupview.pt:81
 msgid "edit list of tracks"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:29
+#: ../browser/templates/playlistpopupview.pt:78
 msgid "edit playlist"
 msgstr ""
 
-#: ../browser/templates/playlistview.pt:28
+#: ../browser/templates/playlistpopupview.pt:75
 msgid "home"
 msgstr ""
 
-#: ../content/track.py:21
+#: ../content/track.py:15
 msgid "mp3, oga, ogg, wav"
 msgstr ""
