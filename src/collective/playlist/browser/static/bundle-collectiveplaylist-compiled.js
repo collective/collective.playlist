@@ -3551,14 +3551,14 @@ define('pat-collectiveplaylist',[
         // pjax
         $("body").append($("#playerfooterviewlet"));
         
-        function whenContainerReady() {
-            registry.scan(document.body);
-        };
         var pjax = new P({
-          elements: "div.outer-wrapper a",
-          selectors: ["#edit-zone", "div.outer-wrapper"]
+            elements: ["div.outer-wrapper a"],
+            selectors: ["#edit-zone", "div.outer-wrapper"],
+            cacheBust: false
         });        
-        document.addEventListener("pjax:success", whenContainerReady);
+        document.addEventListener("pjax:success", function() {
+            registry.scan(document.body);
+        });
         
         
         // JPlayer

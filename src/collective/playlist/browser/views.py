@@ -19,21 +19,17 @@ class PlaylistBaseView(DefaultView):
     """ Base View
     """
 
-    def __call__(self):
-        return u"Base View. "
-
-
     def getTracks(self):
         """ list of track dictionaries
 
-[{"mp3":
-        "http://localhost:10680/playlisttest/playlist/track-1/@@download/audiofile/track-1.mp3",
+[{u'mp3':
+        u"http://nohost/plone/playlist/track-1/@@download/audiofile/track-1.mp3",
     "title": "Track 1"},
-{"mp3":
-        "http://localhost:10680/playlisttest/playlist/track-2/@@download/audiofile/track-2.mp3",
+{u'mp3':
+        u"http://nohost/plone/playlist/track-2/@@download/audiofile/track-2.mp3",
     "title": "Track 2"},
-{"mp3":
-        "http://localhost:10680/playlisttest/playlist/track-3/@@download/audiofile/track-3.mp3",
+{u'mp3':
+        u"http://nohost/plone/playlist/track-3/@@download/audiofile/track-3.mp3",
     "title": "Track 3"}]
 """
 
@@ -58,39 +54,6 @@ class PlaylistBaseView(DefaultView):
         """
         return json.dumps(self.getTracks())
         
-    # @ram.cache(lambda *args: time() // 3)
-    def js_collectiveplaylist(self):
-        """ OBSOLETE
-        
-        Initialize JPlayer"""
-        js = u""" $(document).ready(function(){{
-    new jPlayerPlaylist({{
-        jPlayer: "#jquery_jplayer_playlist",
-        cssSelectorAncestor: "#jp_container_playlist"
-    }}, {dtracks},
-    {{
-        volume: 0.85,
-        playlistOptions: {{
-            autoPlay: false,
-            // displayTime: 0,
-            // addTime: 0,
-            // removeTime: 0,
-            // shuffleTime: 0
-        }},
-        swfPath: "/++plone++collective.playlist",
-        solution: 'html, flash',
-        supplied: "mp3, oga, ogg, wav",
-        wmode: "window",
-        useStateClassSkin: true,
-        autoBlur: false,
-        smoothPlayBar: true,
-        keyEnabled: true,
-        remainingDuration: true
-    }});
-
-}});"""
-        return js.format(dtracks=json.dumps(self.getTracks()))
-
     def can_add_and_edit(self):
         try:
             # roles = api.user.get_roles()
@@ -132,9 +95,6 @@ class PlaylistBaseView(DefaultView):
         cr = context.copyright.output
         return cr
 
-    def include_jquery(self):
-        return True
-
 
 class PlaylistPopupView(PlaylistBaseView):
     """
@@ -152,6 +112,3 @@ class PlaylistFooterView(PlaylistBaseView):
 
     def __call__(self):
         return self.template()
-
-    def include_jquery(self):
-        return False

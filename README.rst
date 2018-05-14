@@ -97,7 +97,7 @@ Change Font
 **************
 
 .. figure:: font.png
-    :width: 400px
+    :width: 300px
     :align: center
     :alt: How to use your font
 

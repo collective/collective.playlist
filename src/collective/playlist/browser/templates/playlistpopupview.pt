@@ -7,8 +7,7 @@
         
         <script type="text/javascript" src="++plone++collective.playlist/extern/require.js"></script>
         <!-- <script type="text/javascript" src="++plone++static/components/requirejs/require.js"></script> -->
-        <script tal:condition="view/include_jquery"
-            type="text/javascript" src="++plone++collective.playlist/extern/jquery.min.js"></script>
+        <script type="text/javascript" src="++plone++collective.playlist/extern/jquery.min.js"></script>
 
         <link rel="stylesheet" type="text/css" data-bundle="collectiveplaylist"
              href="++plone++collective.playlist/collectiveplaylist.css">
