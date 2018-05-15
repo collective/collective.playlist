@@ -3555,8 +3555,25 @@ define('pat-collectiveplaylist',[
             elements: ["div.outer-wrapper a"],
             selectors: ["#edit-zone", "div.outer-wrapper"],
             cacheBust: false
-        });        
+        });
+
+        // replace css body classes
+        var bodyclass = ""
+        pjax._handleResponse = pjax.handleResponse;
+        pjax.handleResponse = function(responseText, request, href) {
+            try {
+                var xmlDoc = $.parseXML(responseText)
+                var $xml = $( xmlDoc )
+                var $body = $xml.find( "body" );
+                bodyclass = $body.attr("class");
+            } catch(err) {
+                console.debug("A Parsing Error occured");
+            }
+            pjax._handleResponse(responseText, request, href);
+        }
+        
         document.addEventListener("pjax:success", function() {
+            $("body").attr("class", bodyclass);
             registry.scan(document.body);
         });
         

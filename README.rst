@@ -144,11 +144,11 @@ Plone Version Compatibility
 
 Plone 5
 
-.. image:: https://travis-ci.org/ksuess/collective.playlist.svg?branch=master
-    :target: https://travis-ci.org/ksuess/collective.playlist
+.. image:: https://travis-ci.org/collective/collective.playlist.svg?branch=master&t=1002
+    :target: https://travis-ci.org/collective/collective.playlist
     
-.. image:: https://coveralls.io/repos/github/ksuess/collective.playlist/badge.svg?branch=master&t=1001
-    :target: https://coveralls.io/github/ksuess/collective.playlist?branch=master
+.. image:: https://coveralls.io/repos/github/collective/collective.playlist/badge.svg?branch=master&t=1002
+    :target: https://coveralls.io/github/collective/collective.playlist?branch=master
 
 
 Contribute
@@ -169,8 +169,21 @@ Music:
 
 For JPLayer license see JPlayer_
 
+
+Credits
+-------
+
+Developed with the support of:
+
+.. image:: zhref.png
+    :width: 160px
+    :align: left
+    :alt: Reformierte Kirche Kanton Zürich
+    :target: http://www.zhref.ch
+
+
 Author
-------
+-------
 
 - Katja Süss, Rohberg ( @ksuess )
 
