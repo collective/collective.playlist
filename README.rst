@@ -176,7 +176,7 @@ Credits
 Developed with the support of:
 
 .. image:: zhref.png
-    :width: 160px
+    :width: 220px
     :align: left
     :alt: Reformierte Kirche Kanton Zürich
     :target: http://www.zhref.ch

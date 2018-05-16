@@ -24,23 +24,24 @@ define([
             cacheBust: false
         });
 
-        // replace css body classes
+        // update css body classes
         var bodyclass = ""
         pjax._handleResponse = pjax.handleResponse;
         pjax.handleResponse = function(responseText, request, href) {
             try {
-                var xmlDoc = $.parseXML(responseText)
-                var $xml = $( xmlDoc )
-                var $body = $xml.find( "body" );
-                bodyclass = $body.attr("class");
+                var mt = responseText.match(/body.*? class="(.*?)"/);
+                if (mt) {
+                    bodyclass = mt[1];
+                }                
             } catch(err) {
-                console.debug("A Parsing Error occured");
+                console.error(err);
             }
             pjax._handleResponse(responseText, request, href);
         }
         
         document.addEventListener("pjax:success", function() {
             $("body").attr("class", bodyclass);
+            // apply patterns
             registry.scan(document.body);
         });
         
