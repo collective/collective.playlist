@@ -35,6 +35,7 @@
       name="playlist-settings"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".settings.SettingsView"
+      layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
       permission="cmf.ManagePortal"
       />
 

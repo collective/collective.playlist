@@ -1,8 +1,6 @@
 # coding: utf-8
 from collective.playlist import _
-from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
-from plone.z3cform import layout
 from Products.Five.browser import BrowserView
 from zope import schema
 from zope.interface import Interface
@@ -39,13 +37,6 @@ class SettingsEditForm(RegistryEditForm):
 
 
 class SettingsView(BrowserView):
-    """
-    View which wrap the settings form using ControlPanelFormWrapper to a
-    HTML boilerplate frame.
-    """
+    """Control panel form wrapper."""
 
-    def __call__(self):
-        view_factor = layout.wrap_form(
-            SettingsEditForm, ControlPanelFormWrapper)
-        view = view_factor(self.context, self.request)
-        return view()
+    form = SettingsEditForm

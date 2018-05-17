@@ -3580,7 +3580,7 @@ define('pat-collectiveplaylist',[
         
         
         // JPlayer
-        var tracks = $('#tracks').html();
+        var tracks = $('#jquery_jplayer_playlist').attr('data-tracks');
         tracks = tracks.replace(/'/g, '"');
         tracks = JSON.parse(tracks);
     

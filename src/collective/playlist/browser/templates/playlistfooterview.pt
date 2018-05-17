@@ -1,6 +1,5 @@
-<div id="tracks" class="hidden" tal:content="view/getJSONTracks">Tracks</div>
-
-<div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
+<div id="jquery_jplayer_playlist" class="jp-jplayer"
+            tal:attributes="data-tracks view/getJSONTracks"></div>
 
 <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
     <div class="jp-type-playlist">

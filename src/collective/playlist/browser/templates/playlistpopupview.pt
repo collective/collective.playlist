@@ -20,7 +20,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 // JPlayer
-                var tracks = $('#tracks').html();
+                var tracks = $('#jquery_jplayer_playlist').attr('data-tracks');
                 tracks = tracks.replace(/'/g, '"');
                 tracks = JSON.parse(tracks);
         
@@ -86,9 +86,9 @@
                 i18n:translate="add track">add track</a></li>
         </ul>
 
-        <div id="tracks" class="hidden" tal:content="view/getJSONTracks">Tracks</div>
         
-        <div id="jquery_jplayer_playlist" class="jp-jplayer"></div>
+        <div id="jquery_jplayer_playlist" class="jp-jplayer"
+            tal:attributes="data-tracks view/getJSONTracks"></div>
 
         <div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
             <div class="jp-type-playlist">

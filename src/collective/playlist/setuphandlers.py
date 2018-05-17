@@ -7,7 +7,7 @@ import os
 
 
 @implementer(INonInstallable)
-class HiddenProfiles(object):
+class HiddenProfiles(object):  # pragma: no cover
 
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""

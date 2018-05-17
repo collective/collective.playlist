@@ -55,11 +55,12 @@ class PlaylistBaseView(DefaultView):
         return json.dumps(self.getTracks())
         
     def can_add_and_edit(self):
+        # todo: remove after fix of robottests bug
         try:
             # roles = api.user.get_roles()
             current = api.user.get_current()
             roles = current.getRoles()
-        except api.user.UserNotFoundError:
+        except api.user.UserNotFoundError: # pragma: no cover
             roles = []
         result = 'Manager' in roles or \
                  'Site Administrator' in roles or \
