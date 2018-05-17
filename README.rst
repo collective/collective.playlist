@@ -1,22 +1,17 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
-===================
-collective.playlist
-===================
-
+***************************
 Player for Audio Playlist
----------------------------
+***************************
+
+.. contents:: Table of Contents
 
 Summary
-*************************
+============
  
-collective.playlist provides a playlist and a track content type. The player is per default a sticky footer. Optional as an alternative is a player in a pop up window that can be launched via a play button.
+The Plone add-on collective.playlist provides a playlist and a track content type. The player is per default a sticky footer. Optional as an alternative is a player in a pop up window that can be launched via a play button.
 
 
 Sticky Footer
-*************
+=============
 
 The site is navigable while the player continues to play.
 
@@ -36,7 +31,7 @@ The site is navigable while the player continues to play.
     
 
 Pop Up Player
-*************
+=============
 
 A click on the play button opens a window with playlist and player.
 
@@ -58,24 +53,24 @@ A click on the play button opens a window with playlist and player.
 
 
 Documentation
--------------
+=============
 
 Initial playlist
-*******************
+----------------
 
 An initial playlist with tracks is created at /playlist.
 
 The Add-On uses JPlayer_.
 
 Sticky Footer
-*************
+-------------
 
 The site is navigable while the player continues to play thanks to pjax_. Pjax works with browsers that support the history.pushState() API. When the API isn't supported, Pjax goes into fallback mode (and it just does nothing). `Browser Support`_
 
 The sticky footer is shown if and only if a published playlist exists. For a qualified user it's shown anyway.
 
 Pop Up Player
-*************
+-------------
 
 The pop up player is per default deactivated. You can activate it via @@manage-viewlets view like
 localhost:8080/Plone/@@manage-viewlets
@@ -86,15 +81,15 @@ Click the play button to open the player. A menu to edit the playlist and its tr
 
 
 Customizations
---------------
+===============
 
 Layout
-***********
+------
 
 Layout can be modified in control panel.
 
 Change Font
-**************
+-------------
 
 .. figure:: font.png
     :width: 300px
@@ -104,7 +99,7 @@ Change Font
     Use your font
 
 Background Image for your Pop Up Playlist
-*****************************************
+------------------------------------------
 
 Upload an image "background.jpg" to your Plone-Site.
 
@@ -116,7 +111,7 @@ Go to playlist control panel and add::
 
 
 Translations
-------------
+==============
 
 This product has been translated into
 
@@ -124,23 +119,13 @@ This product has been translated into
 
 
 Installation
-------------
+==============
 
-Install collective.playlist by adding it to your buildout::
-
-    [buildout]
-
-    ...
-
-    eggs =
-        collective.playlist
-
-
-and then run ``bin/buildout``
+Install collective.playlist by adding it to your buildout.
 
 
 Plone Version Compatibility
----------------------------
+============================
 
 Plone 5
 
@@ -152,7 +137,7 @@ Plone 5
 
 
 Contribute
-----------
+============
 
 - Issue Tracker: https://github.com/collective/collective.playlist/issues
 - Source Code: https://github.com/collective/collective.playlist
@@ -160,7 +145,7 @@ Contribute
 
 
 License
--------
+========
 
 The project is licensed under the GPLv2.
 
@@ -171,7 +156,7 @@ For JPLayer license see JPlayer_
 
 
 Credits
--------
+=========
 
 Developed with the support of:
 
@@ -183,13 +168,13 @@ Developed with the support of:
 
 
 Author
--------
+========
 
 - Katja Süss, Rohberg ( @ksuess )
 
 
 Footnotes
----------
+============
 
 .. target-notes::
 
