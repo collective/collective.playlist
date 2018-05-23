@@ -11,7 +11,7 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
-version = '1.0a2'
+version = '1.0a2.dev0'
 
 setup(
     name='collective.playlist',
