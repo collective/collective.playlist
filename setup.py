@@ -11,11 +11,9 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
-version = '0.0.1'
-
 setup(
     name='collective.playlist',
-    version='1.0a1',
+    version='1.0a2',
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
