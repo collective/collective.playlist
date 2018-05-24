@@ -13,7 +13,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='collective.playlist',
-    version='1.0a3.dev0',
+    version='1.0a3',
     description="Audio playlist player for Plone",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
