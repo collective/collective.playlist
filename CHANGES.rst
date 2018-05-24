@@ -5,7 +5,7 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Pypi: show images of README.rst
 
 
 1.0a2 (2018-05-23)

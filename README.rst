@@ -15,14 +15,14 @@ Sticky Footer
 
 The site is navigable while the player continues to play.
 
-.. figure:: stickyplayer.png
+.. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/stickyplayer.png
     :width: 500px
     :align: center
     :alt: Sticky Footer Player
 
     Sticky Footer Player
 
-.. figure:: stickyplayer_mobile.png
+.. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/stickyplayer_mobile.png
     :width: 210px
     :align: center
     :alt: Sticky Footer Player Mobile
@@ -35,7 +35,7 @@ Pop Up Player
 
 A click on the play button opens a window with playlist and player.
 
-.. figure:: playlist.png
+.. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/playlist.png
     :width: 500px
     :align: center
     :alt: Playlist
@@ -43,7 +43,7 @@ A click on the play button opens a window with playlist and player.
     Playlist
 
 
-.. figure:: playlist_mobile.png
+.. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/playlist_mobile.png
     :width: 210px
     :align: center
     :alt: Playlist Mobile evices
@@ -55,17 +55,17 @@ A click on the play button opens a window with playlist and player.
 Documentation
 =============
 
+The Add-On uses JPlayer [#f1]_.
+
 Initial playlist
 ----------------
 
 An initial playlist with tracks is created at /playlist.
 
-The Add-On uses JPlayer_.
-
 Sticky Footer
 -------------
 
-The site is navigable while the player continues to play thanks to pjax_. Pjax works with browsers that support the history.pushState() API. When the API isn't supported, Pjax goes into fallback mode (and it just does nothing). `Browser Support`_
+The site is navigable while the player continues to play thanks to pjax [#f2]_. Pjax works with browsers that support the history.pushState() API. When the API isn't supported, Pjax goes into fallback mode (and it just does nothing). See Browser Support [#f3]_.
 
 The sticky footer is shown if and only if a published playlist exists. For a qualified user it's shown anyway.
 
@@ -91,7 +91,7 @@ Layout can be modified in control panel.
 Change Font
 -------------
 
-.. figure:: font.png
+.. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/font.png
     :width: 300px
     :align: center
     :alt: How to use your font
@@ -152,7 +152,7 @@ The project is licensed under the GPLv2.
 Music:
 © 2003 Miaow / Arnaud Laflaquiere - MiaowMusic.net
 
-For JPLayer license see JPlayer_
+For JPLayer license see JPlayer [#f1]_
 
 
 Credits
@@ -160,7 +160,7 @@ Credits
 
 Developed with the support of:
 
-.. image:: zhref.png
+.. image:: https://raw.githubusercontent.com/collective/collective.playlist/master/zhref.png
     :width: 220px
     :align: left
     :alt: Reformierte Kirche Kanton Zürich
@@ -178,6 +178,6 @@ Footnotes
 
 .. target-notes::
 
-.. _JPlayer: http://jplayer.org/latest/demo-02-multi/
-.. _pjax: https://github.com/MoOx/pjax
-.. _Browser Support: https://caniuse.com/#search=pushstate
+.. [#f1] `JPlayer <http://jplayer.org/latest/demo-02-multi/>`_ : Open Source media library written in JavaScript.
+.. [#f2] `pjax <https://github.com/MoOx/pjax>`_ : Enable fast Ajax navigation on any website (using pushState + xhr)  
+.. [#f3] Browser Support `Caniuse <https://caniuse.com/#search=pushstate>`_

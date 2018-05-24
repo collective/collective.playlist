@@ -1,4 +1,4 @@
 Contributors
 ============
 
-- ksuess, k.suess@rohberg.ch
+- ksuess, https://github.com/ksuess
