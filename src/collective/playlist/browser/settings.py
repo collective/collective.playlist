@@ -1,6 +1,6 @@
 # coding: utf-8
 from collective.playlist import _
-from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.app.registry.browser import controlpanel
 from Products.Five.browser import BrowserView
 from zope import schema
 from zope.interface import Interface
@@ -27,7 +27,7 @@ class ISettings(Interface):
         )
 
 
-class SettingsEditForm(RegistryEditForm):
+class SettingsEditForm(controlpanel.RegistryEditForm):
     """
     Define form logic
     """
@@ -36,7 +36,7 @@ class SettingsEditForm(RegistryEditForm):
     label = u'Playlist settings'
 
 
-class SettingsView(BrowserView):
+class SettingsView(controlpanel.ControlPanelFormWrapper):
     """Control panel form wrapper."""
 
     form = SettingsEditForm
