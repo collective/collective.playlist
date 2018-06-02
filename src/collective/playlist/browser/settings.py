@@ -1,7 +1,6 @@
 # coding: utf-8
 from collective.playlist import _
 from plone.app.registry.browser import controlpanel
-from Products.Five.browser import BrowserView
 from zope import schema
 from zope.interface import Interface
 
