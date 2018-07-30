@@ -6,7 +6,7 @@ Player for Audio Playlist
 
 Summary
 ============
- 
+
 The Plone add-on collective.playlist provides a playlist and a track content type. The player is per default a sticky footer. Optional as an alternative is a player in a pop up window that can be launched via a play button.
 
 
@@ -28,7 +28,7 @@ The site is navigable while the player continues to play.
     :alt: Sticky Footer Player Mobile
 
     Sticky Footer Player on Mobile Device
-    
+
 
 Pop Up Player
 =============
@@ -67,7 +67,7 @@ Sticky Footer
 
 The site is navigable while the player continues to play thanks to pjax [#f2]_. Pjax works with browsers that support the history.pushState() API. When the API isn't supported, Pjax goes into fallback mode (and it just does nothing). See Browser Support [#f3]_.
 
-The sticky footer is shown if and only if a published playlist exists. For a qualified user it's shown anyway.
+The sticky footer is shown if and only if a published playlist exists. For a qualified user the player is shown even for an unpublished playlist.
 
 Pop Up Player
 -------------
@@ -75,8 +75,7 @@ Pop Up Player
 The pop up player is per default deactivated. You can activate it via @@manage-viewlets view like
 localhost:8080/Plone/@@manage-viewlets
 
-A play button is shown on top of each page if and only if a published playlist exists. For a qualified user it's shown anyway.
-
+A play button is shown on top of each page if and only if a published playlist exists. For a qualified user it is shown even for an unpublished playlist.
 Click the play button to open the player. A menu to edit the playlist and its tracks is presented to qualified users.
 
 
@@ -131,7 +130,7 @@ Plone 5
 
 .. image:: https://travis-ci.org/collective/collective.playlist.svg?branch=master&t=1002
     :target: https://travis-ci.org/collective/collective.playlist
-    
+
 .. image:: https://coveralls.io/repos/github/collective/collective.playlist/badge.svg?branch=master&t=1002
     :target: https://coveralls.io/github/collective/collective.playlist?branch=master
 
@@ -164,7 +163,6 @@ Developed with the support of:
     :width: 220px
     :align: left
     :alt: Reformierte Kirche Kanton Zürich
-    :target: http://www.zhref.ch
 
 
 Author
@@ -179,5 +177,5 @@ Footnotes
 .. target-notes::
 
 .. [#f1] `JPlayer <http://jplayer.org/latest/demo-02-multi/>`_ : Open Source media library written in JavaScript.
-.. [#f2] `pjax <https://github.com/MoOx/pjax>`_ : Enable fast Ajax navigation on any website (using pushState + xhr)  
+.. [#f2] `pjax <https://github.com/MoOx/pjax>`_ : Enable fast Ajax navigation on any website (using pushState + xhr)
 .. [#f3] Browser Support `Caniuse <https://caniuse.com/#search=pushstate>`_
