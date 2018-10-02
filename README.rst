@@ -22,6 +22,7 @@ The site is navigable while the player continues to play.
 
     Sticky Footer Player
 
+
 .. figure:: https://raw.githubusercontent.com/collective/collective.playlist/master/stickyplayer_mobile.png
     :width: 210px
     :align: center
