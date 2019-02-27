@@ -1,9 +1,13 @@
 # coding: utf-8
 from plone import api
+from plone.namedfile.file import NamedBlobFile
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
 import os
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 @implementer(INonInstallable)
@@ -32,6 +36,7 @@ def uninstall(context):
     playlists = api.content.find(portal_type='playlist')
     playlists = [b.getObject() for b in playlists]
     api.content.delete(objects=playlists)
+    logger.info("playlists with tracks removed.")
 
 
 def _create_content(portal):
@@ -64,17 +69,16 @@ def _create_content(portal):
 
 
 def _load_file(track_number):
-    from plone.namedfile.file import NamedBlobFile
     filename = os.path.join(
         os.path.dirname(__file__),
         'resources',
         'tracks',
         'track-{0}.mp3'.format(track_number),
     )
-    return NamedBlobFile(
-        data=open(filename, 'r').read(),
-        filename=u'track-{0}.mp3'.format(track_number),
-    )
+    with open(filename, 'rb') as f:
+        return NamedBlobFile(
+                    data=f.read(),
+                    filename='track-{}.mp3'.format(track_number))
 
 
 def _deactivate_popup(portal):
