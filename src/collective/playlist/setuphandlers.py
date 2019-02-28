@@ -77,8 +77,8 @@ def _load_file(track_number):
     )
     with open(filename, 'rb') as f:
         return NamedBlobFile(
-                    data=f.read(),
-                    filename=u'track-{}.mp3'.format(track_number))
+            data=f.read(),
+            filename=u'track-{}.mp3'.format(track_number))
 
 
 def _deactivate_popup(portal):
