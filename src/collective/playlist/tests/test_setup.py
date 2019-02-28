@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
 from collective.playlist.testing import COLLECTIVE_PLAYLIST_INTEGRATION_TESTING  # noqa
-from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 
