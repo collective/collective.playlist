@@ -35,7 +35,7 @@ before_install:
   - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
   - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
   - pip install zc.buildout
-  - cp $PLONE_VERSION.cfg buildout.cfg
+  - cp plone-$PLONE_VERSION.cfg buildout.cfg
 install:
   - virtualenv .
   - bin/pip install -r requirements.txt
