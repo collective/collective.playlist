@@ -14,22 +14,22 @@ matrix:
       env: PLONE_VERSION=5.2.x
     - python: "3.6"
       env: PLONE_VERSION=5.2.x
+      dist: bionic
     - python: "3.7"
       env: PLONE_VERSION=5.2.x
-      dist: xenial
+      dist: bionic
       sudo: true
   fast_finish: true
 cache:
   pip: true
   directories:
-    - $HOME/buildout-cache
-    - node_modules
+# - $HOME/buildout-cache
 before_install:
 # install chrome webdriver
   - mkdir webdriver;
-    wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz;
-    tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C webdriver;
-    wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip;
+    wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz;
+    tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C webdriver;
+    wget https://chromedriver.storage.googleapis.com/2.46/chromedriver_linux64.zip;
     unzip chromedriver_linux64.zip -d webdriver;
     export PATH=$PATH:$(pwd)/webdriver;
   - mkdir -p $HOME/buildout-cache/{eggs,downloads}
