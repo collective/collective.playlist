@@ -32,24 +32,20 @@ before_install:
     wget https://chromedriver.storage.googleapis.com/2.46/chromedriver_linux64.zip;
     unzip chromedriver_linux64.zip -d webdriver;
     export PATH=$PATH:$(pwd)/webdriver;
-  - mkdir -p $HOME/buildout-cache/{eggs,downloads}
-  - mkdir $HOME/.buildout
-  - echo "[buildout]" > $HOME/.buildout/default.cfg
-  - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
-  - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
-  - pip install zc.buildout
   - cp plone-$PLONE_VERSION.cfg buildout.cfg
 install:
   - virtualenv .
+  - python --version
   - bin/pip install -r requirements.txt
   - bin/buildout -N annotate
-  - bin/buildout -N 
+  - bin/buildout -N
 before_script:
   - export DISPLAY=:99.0
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - sleep 3
 script:
-  - bin/test --all
+  - bin/test
+  - bin/test -t *.robot --all
 after_success:
   - bin/code-analysis
   - bin/createcoverage
