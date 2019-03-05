@@ -4,17 +4,17 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s collective.playlist -t test_track.robot --all
+#  $ ./bin/test -s collective.playlist -t test_track.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src collective.playlist.testing.COLLECTIVE_PLAYLIST_ACCEPTANCE_TESTING
+# $ ./bin/robot-server --reload-path src collective.playlist.testing.COLLECTIVE_PLAYLIST_ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #
-# $ bin/robot src/plonetraining/testing/tests/robot/test_track.robot
+# $ ./bin/robot src/collective/playlist/tests/robot/test_track.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).

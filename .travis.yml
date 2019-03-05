@@ -42,8 +42,8 @@ before_install:
 install:
   - virtualenv .
   - bin/pip install -r requirements.txt
-  - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
-  - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
+  - bin/buildout -N annotate
+  - bin/buildout -N 
 before_script:
   - export DISPLAY=:99.0
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &

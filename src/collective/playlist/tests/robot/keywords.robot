@@ -16,9 +16,12 @@ Retract object
 Select pop up window
     Select Window  NEW
     Log Location
-    
+
 Scroll Page
     Scroll Page To Location    0    2000
+
+Scroll Page to Bottom
+    Execute JavaScript  window.scrollTo(0, document.body.scrollHeight)
 
 Scroll Page To Location
     [Arguments]    ${x_location}    ${y_location}
@@ -29,10 +32,10 @@ Scroll Page To Location
 
 a logged-in manager
   Enable autologin as  Manager
-  
+
 a logged-in site administrator
   Enable autologin as  Site Administrator  Contributor  Reviewer
-  
+
 Log in as site administrator
     Enable autologin as  Manager
     Create user  siteadmin  roles=('Contributor','Reviewer','Site Administrator')
@@ -62,6 +65,7 @@ a track
     Click Link  Track
     Input Text  name=form.widgets.IDublinCore.title  ${title}
     Choose File  name=form.widgets.audiofile  ${PATH_TO_TEST_FILES}/${filename}
+    Scroll Page to Bottom
     Click button  Save
     Page Should Contain  Item created
 
@@ -69,14 +73,15 @@ a track
 # --- WHEN -------------------------------------------------------------------
 
 I type '${title}' into the title field
-  Input Text  name=form.widgets.IDublinCore.title  ${title}
+    Input Text  name=form.widgets.IDublinCore.title  ${title}
 
 I submit the form
-  Click Button  Save
+    Scroll Page to Bottom
+    Click Button  Save
 
 I go to the playlist view
-  Go To  ${PLONE_URL}/my-playlist
-  # Wait until page contains  Site Map
+    Go To  ${PLONE_URL}/my-playlist
+    # Wait until page contains  Site Map
 
 I go to track ${track_id} in ${playlist_id}
     Go To  ${PLONE_URL}/${playlist_id}/${track_id}
@@ -101,4 +106,3 @@ a track with the title '${title}' has been created
 I can see the track title '${title}'
     Wait until page contains  Site Map
     Page should contain  ${title}
-
