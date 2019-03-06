@@ -45,7 +45,7 @@ before_script:
   - sleep 3
 script:
   - bin/test
-  - ROBOT_BROWSER=chrome bin/test -t robot --all
+  - ROBOT_BROWSER=firefox bin/test -t robot --all
 after_success:
   - bin/code-analysis
   - bin/createcoverage

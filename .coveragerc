@@ -4,3 +4,10 @@ include =
 omit =
     */test*
     */upgrades/*
+    **/.buildout/eggs/*
+    **/lib/python*
+    **/usr/*
+    **/bin/test
+    **/buildout-cache/eggs/*
+    **/eggs/*
+    **/parts/*
