@@ -5,7 +5,7 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- drop Python 2 Support
 
 
 1.0a3 (2018-05-24)

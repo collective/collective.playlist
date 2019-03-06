@@ -127,7 +127,7 @@ Install collective.playlist by adding it to your buildout.
 Plone Version Compatibility
 ============================
 
-Plone 5
+Plone >= 5.2 and Python 3
 
 .. image:: https://travis-ci.org/collective/collective.playlist.svg?branch=master&t=1002
     :target: https://travis-ci.org/collective/collective.playlist
