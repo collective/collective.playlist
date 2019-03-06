@@ -56,7 +56,7 @@ Wait until playlist is open
     Wait Until Page Contains  Track 1
 
 Wait until logged out
-    Wait Until Page Contains  You are now logged out
+    Wait Until Page Contains  logged out
 
 
 # --- THEN -------------------------------------------------------------------
