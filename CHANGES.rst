@@ -1,12 +1,7 @@
 Changelog
 =========
 
-
-1.0a4 (unreleased)
-------------------
-
-- Support Python 3
-  [ksuess]
+.. towncrier release notes start
 
 
 1.0a3 (2018-05-24)
