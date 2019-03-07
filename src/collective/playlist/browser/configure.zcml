@@ -1,7 +1,9 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.playlist">
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
@@ -10,6 +12,8 @@
       directory="overrides"
       layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
       />
+
+  <include package="Products.CMFCore" file="permissions.zcml" />
 
   <!-- Publish static files -->
   <plone:static
@@ -21,7 +25,7 @@
       name="collective.playlist.extern"
       type="plone"
       directory="static-extern"
-      />   -->    
+      />   -->
   <!-- <browser:resourceDirectory
     name="collective.playlist"
     directory="static" />
@@ -35,7 +39,7 @@
       name="playlist-settings"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".settings.SettingsView"
-      layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+      layer="..interfaces.ICollectivePlaylistLayer"
       permission="cmf.ManagePortal"
       />
 
@@ -45,14 +49,14 @@
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
     template="templates/playerbuttonviewlet.pt"
     class=".viewlets.PlaylistButtonViewlet"
-    layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+    layer="..interfaces.ICollectivePlaylistLayer"
     permission="zope2.View"
     />
 
   <browser:page
     name="playlistpopupview"
     for="collective.playlist.content.playlist.IPlaylist"
-    layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+    layer="..interfaces.ICollectivePlaylistLayer"
     class=".views.PlaylistPopupView"
     permission="zope2.View"
     />
@@ -61,20 +65,20 @@
     <browser:page
       name="playlistfooterview"
       for="collective.playlist.content.playlist.IPlaylist"
-      layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+      layer="..interfaces.ICollectivePlaylistLayer"
       class=".views.PlaylistFooterView"
       permission="zope2.View"
       />
-      
+
   <browser:viewlet
     name="collective.playlist.playerfooterviewlet"
     manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
     template="templates/playerfooterviewlet.pt"
     class=".viewlets.PlaylistFooterViewlet"
-    layer="collective.playlist.interfaces.ICollectivePlaylistLayer"
+    layer="..interfaces.ICollectivePlaylistLayer"
     permission="zope2.View"
     />
-    
+
 
   <adapter
     for="Products.CMFCore.interfaces.IFolderish

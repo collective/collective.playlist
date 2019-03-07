@@ -22,13 +22,13 @@ Scenario: Play button is shown if and only if a published playlist exists
     Given a logged-in site administrator
     Go to homepage
     a play button is not visible
-    
+
     Given a logged-in manager
     Go To  ${PLONE_URL}/@@manage-viewlets
     # make playbutton visible:
     Go To  ${PLONE_URL}/@@manage-viewlets?show=plone.portalheader%3Acollective.playlist.playerbuttonviewlet
     Click Button  name=form.button.confirm
-    
+
     Given a logged-in site administrator
     Go to homepage
     a play button is visible
@@ -39,8 +39,11 @@ Scenario: Play button is shown if and only if a published playlist exists
     Click Link  edit playlist
     Retract object
     Disable autologin
-    Log out
+    Go to  ${PLONE_URL}/logout
+    Go to  ${PLONE_URL}/@@plone-root-logout
+    Handle Alert  action=DISMISS
     Wait until logged out
+    Go to  ${PLONE_URL}
     a play button is not visible
 
 
@@ -53,7 +56,7 @@ Wait until playlist is open
     Wait Until Page Contains  Track 1
 
 Wait until logged out
-    Wait Until Page Contains  You are now logged out
+    Wait Until Page Contains  logged out
 
 
 # --- THEN -------------------------------------------------------------------

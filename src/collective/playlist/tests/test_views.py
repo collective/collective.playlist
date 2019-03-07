@@ -18,7 +18,7 @@ class PlaylistIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_BaseView(self):
-        api.portal.set_registry_record('plone.site_logo', 'todo')
+        api.portal.set_registry_record('plone.site_logo', b'todo')
         val = u'https://fonts.googleapis.com/css?family=Ubuntu'
         api.portal.set_registry_record('collective.playlist.stylesheets',
                                        [val])

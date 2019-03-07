@@ -13,7 +13,7 @@ class ISettings(Interface):
         description=_(u'Some style to be applied to playlist. CSS'),
         default=u'',
         required=False,
-        )
+    )
 
     stylesheets = schema.List(
         title=_(u'Stylesheets'),
@@ -23,7 +23,7 @@ class ISettings(Interface):
         missing_value=None,
         required=False,
         value_type=schema.TextLine(),
-        )
+    )
 
 
 class SettingsEditForm(controlpanel.RegistryEditForm):

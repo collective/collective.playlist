@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
 from collective.playlist.testing import COLLECTIVE_PLAYLIST_INTEGRATION_TESTING  # noqa
-from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 
 import unittest
+
+try:
+    from Products.CMFPlone.utils import get_installer
+except ImportError:
+    # BBB for Plone 5.0 and lower.
+    get_installer = None
+
+PROJECTNAME = 'collective.playlist'
 
 
 class TestSetup(unittest.TestCase):
@@ -16,12 +23,13 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        if get_installer is None:
+            self.installer = self.portal['portal_quickinstaller']
+        else:
+            self.installer = get_installer(self.portal)
 
     def test_product_installed(self):
-        """Test if collective.playlist is installed."""
-        self.assertTrue(self.installer.isProductInstalled(
-            'collective.playlist'))
+        self.assertTrue(self.installer.isProductInstalled(PROJECTNAME))
 
     def test_browserlayer(self):
         """Test that ICollectivePlaylistLayer is registered."""
@@ -39,10 +47,12 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-
+        if get_installer is None:
+            self.installer = self.portal['portal_quickinstaller']
+        else:
+            self.installer = get_installer(self.portal)
         setRoles(self.portal, TEST_USER_ID, ['Site Administrator'])
 
-        self.installer = api.portal.get_tool('portal_quickinstaller')
         self.installer.uninstallProducts(['collective.playlist'])
 
     def test_product_uninstalled(self):
