@@ -1,10 +1,13 @@
 graft src/collective
 graft docs
 include *.py
+include *.toml
 include *.rst
 include *.txt
 include *.GPL
 include *.png
 include *.jpg
+recursive-include news *.breaking
+recursive-include news *.gitkeep
 global-exclude *.pyc
 global-exclude *.mo
