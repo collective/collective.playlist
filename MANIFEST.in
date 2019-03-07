@@ -1,5 +1,6 @@
 graft src/collective
 graft docs
+include *.py
 include *.rst
 include *.txt
 include *.GPL

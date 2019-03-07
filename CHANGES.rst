@@ -5,7 +5,7 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
-- Drop Python 2 Support
+- Support Python 3
   [ksuess]
 
 
