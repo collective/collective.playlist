@@ -6,9 +6,9 @@ from setuptools import setup
 
 
 long_description = '\n\n'.join([
-    open('README.rst').read(),
-    open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
+    open('README.rst', 'r').read(),
+    open('CONTRIBUTORS.rst', 'r').read(),
+    open('CHANGES.rst', 'r').read(),
 ])
 
 setup(
@@ -27,7 +27,7 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
-    keywords='audio player playlist',
+    keywords='audio player playlist Plone',
     author='ksuess',
     author_email='k.suess@rohberg.ch',
     url='https://pypi.python.org/pypi/collective.playlist',
