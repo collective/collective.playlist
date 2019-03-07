@@ -11,16 +11,16 @@ define([
   var Pattern = Base.extend({
     name: 'pat-collectiveplaylist',
     trigger: '#jquery_jplayer_playlist',
-    
+
     init: function() {
         var that = this;
-        
+
         // pjax
         $("body").append($("#playerfooterviewlet"));
-        
+
         var pjax = new P({
-            elements: ["div.outer-wrapper a"],
-            selectors: ["#edit-zone", "div.outer-wrapper"],
+            elements: ["div.outer-wrapper a", "#portal-footer-wrapper a"],
+            selectors: ["title", "#edit-zone", "div.outer-wrapper"],
             cacheBust: false
         });
 
@@ -32,25 +32,25 @@ define([
                 var mt = responseText.match(/body.*? class="(.*?)"/);
                 if (mt) {
                     bodyclass = mt[1];
-                }                
+                }
             } catch(err) {
                 console.error(err);
             }
             pjax._handleResponse(responseText, request, href);
         }
-        
+
         document.addEventListener("pjax:success", function() {
             $("body").attr("class", bodyclass);
             // apply patterns
             registry.scan(document.body);
         });
-        
-        
+
+
         // JPlayer
         var tracks = $('#jquery_jplayer_playlist').attr('data-tracks');
         tracks = tracks.replace(/'/g, '"');
         tracks = JSON.parse(tracks);
-    
+
         new jPlayerPlaylist({
           jPlayer: '#jquery_jplayer_playlist',
           cssSelectorAncestor: '#jp_container_playlist'
@@ -72,7 +72,7 @@ define([
           keyEnabled: true,
           remainingDuration: true
         }); // new jPlayerPlaylist
-      
+
     }
   });
 
