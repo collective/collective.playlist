@@ -1,5 +1,5 @@
-<tal:playerfooterviewlet tal:condition="view/show">    
+<tal:playerfooterviewlet tal:condition="view/show">
     <div id="playerfooterviewlet">
-        <div tal:content="structure context/playlist/@@playlistfooterview"></div>
+        <div tal:content="structure view/playlist/@@playlistfooterview"></div>
     </div>
 </tal:playerfooterviewlet>
