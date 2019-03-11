@@ -35,6 +35,7 @@ class PlaylistFooterViewlet(PlaylistButtonViewlet):
     """
     """
 
+    @property
     def playlist(self):
         result = self._playlists()[0].getObject()
         return result

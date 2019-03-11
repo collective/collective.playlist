@@ -63,6 +63,18 @@ Initial playlist
 
 An initial playlist with tracks is created at /playlist.
 
+Multiple playlists
+------------------
+
+Create additional playlists. The player takes the one with the newest publishing date.
+
+Where are the audio files?
+--------------------------
+
+- You can add tracks with audio files to a playlist.
+- You can reference audio files with links.
+- You can reference external audio files with links via remote url.
+
 Sticky Footer
 -------------
 
