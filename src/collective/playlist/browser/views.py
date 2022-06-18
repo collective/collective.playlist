@@ -4,9 +4,6 @@ from collective.playlist import ALLOWED_AUDIOTYPES
 from plone import api
 from plone.dexterity.browser.view import DefaultView
 from plone.memoize import ram
-from Products.CMFPlone.resources import add_bundle_on_request
-from Products.CMFPlone.resources import add_resource_on_request
-from Products.CMFPlone.resources import remove_bundle_on_request
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from time import time
 
