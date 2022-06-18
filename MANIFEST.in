@@ -11,3 +11,6 @@ recursive-include news *.breaking
 recursive-include news *.gitkeep
 global-exclude *.pyc
 global-exclude *.mo
+
+# added by check-manifest
+include tox.ini
