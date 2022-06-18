@@ -21,7 +21,7 @@ class CollectivePlaylistLayer(PloneSandboxLayer):
         self.loadZCML(package=collective.playlist)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.playlist:default')
+        applyProfile(portal, "collective.playlist:default")
 
 
 COLLECTIVE_PLAYLIST_FIXTURE = CollectivePlaylistLayer()
@@ -29,13 +29,13 @@ COLLECTIVE_PLAYLIST_FIXTURE = CollectivePlaylistLayer()
 
 COLLECTIVE_PLAYLIST_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_PLAYLIST_FIXTURE,),
-    name='CollectivePlaylistLayer:IntegrationTesting',
+    name="CollectivePlaylistLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_PLAYLIST_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_PLAYLIST_FIXTURE,),
-    name='CollectivePlaylistLayer:FunctionalTesting',
+    name="CollectivePlaylistLayer:FunctionalTesting",
 )
 
 
@@ -45,5 +45,5 @@ COLLECTIVE_PLAYLIST_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectivePlaylistLayer:AcceptanceTesting',
+    name="CollectivePlaylistLayer:AcceptanceTesting",
 )

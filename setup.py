@@ -22,8 +22,9 @@ setup(
         'Development Status :: 5 - Production/Stable',
         "Environment :: Web Environment",
         "Framework :: Plone :: 5.2",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -46,8 +47,9 @@ setup(
     ],
     extras_require={
         'test': [
-            'plone.app.testing',
-            'plone.app.robotframework[debug,reload]',
+            'plone.testing>=5.0.0',
+            "plone.app.testing [robot]",
+            "plone.app.robotframework",
         ],
     },
     entry_points="""

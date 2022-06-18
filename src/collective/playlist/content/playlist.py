@@ -7,15 +7,11 @@ from zope.interface import implementer
 
 
 class IPlaylist(model.Schema):
-    """ Marker interfce and Dexterity Python Schema for Playlist
-    """
+    """Marker interfce and Dexterity Python Schema for Playlist"""
 
-    copyright = RichText(title=_(u'Copyright'),
-                         default=u'',
-                         required=False)
+    copyright = RichText(title=_("Copyright"), default="", required=False)
 
 
 @implementer(IPlaylist)
 class Playlist(Container):
-    """
-    """
+    """ """

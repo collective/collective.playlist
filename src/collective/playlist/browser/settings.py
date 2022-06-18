@@ -6,19 +6,20 @@ from zope.interface import Interface
 
 
 class ISettings(Interface):
-    """ Define settings data structure """
+    """Define settings data structure"""
 
     style = schema.SourceText(
-        title=_(u'Style'),
-        description=_(u'Some style to be applied to playlist. CSS'),
-        default=u'',
+        title=_("Style"),
+        description=_("Some style to be applied to playlist. CSS"),
+        default="",
         required=False,
     )
 
     stylesheets = schema.List(
-        title=_(u'Stylesheets'),
+        title=_("Stylesheets"),
         description=_(
-            u'Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu'), # noqa E501
+            "Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu"
+        ),  # noqa E501
         default=[],
         missing_value=None,
         required=False,
@@ -30,9 +31,10 @@ class SettingsEditForm(controlpanel.RegistryEditForm):
     """
     Define form logic
     """
+
     schema = ISettings
-    schema_prefix = 'collective.playlist'
-    label = u'Playlist settings'
+    schema_prefix = "collective.playlist"
+    label = "Playlist settings"
 
 
 class SettingsView(controlpanel.ControlPanelFormWrapper):

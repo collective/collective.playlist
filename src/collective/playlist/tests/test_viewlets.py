@@ -17,31 +17,27 @@ class PlaylistButtonViewletTestCase(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        self.request = self.layer['request']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.workflowTool = api.portal.get_tool(name='portal_workflow')
+        self.portal = self.layer["portal"]
+        self.request = self.layer["request"]
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        self.workflowTool = api.portal.get_tool(name="portal_workflow")
         self.playlist = self.portal.playlist
 
     def toggle_playbutton(self, enable):
         """activate / deactivate viewlet"""
-        view = self.portal.restrictedTraverse('@@manage-viewlets')
+        view = self.portal.restrictedTraverse("@@manage-viewlets")
         if enable:
-            view.show('plone.portalheader',
-                      'collective.playlist.playerbuttonviewlet')
+            view.show("plone.portalheader", "collective.playlist.playerbuttonviewlet")
         else:
-            view.hide('plone.portalheader',
-                      'collective.playlist.playerbuttonviewlet')
+            view.hide("plone.portalheader", "collective.playlist.playerbuttonviewlet")
 
-    def get_viewlet_manager(self, context, name='plone.portalheader'):
+    def get_viewlet_manager(self, context, name="plone.portalheader"):
         request = self.request
         view = View(context, request)
-        manager = getMultiAdapter(
-            (context, request, view), IViewletManager, name)
+        manager = getMultiAdapter((context, request, view), IViewletManager, name)
         return manager
 
-    def get_viewlet(self, context,
-                    name='collective.playlist.playerbuttonviewlet'):
+    def get_viewlet(self, context, name="collective.playlist.playerbuttonviewlet"):
         manager = self.get_viewlet_manager(context)
         manager.update()
         viewlet = [v for v in manager.viewlets if v.__name__ == name]
@@ -56,10 +52,10 @@ class PlaylistButtonViewletTestCase(unittest.TestCase):
         a = html.xpath('//a[contains(@class,"playlist-button")]')
         self.assertEqual(len(a), 1)
 
-        self.workflowTool.doActionFor(self.playlist, 'retract')
-        setRoles(self.portal, TEST_USER_ID, ['Anonymous'])
+        self.workflowTool.doActionFor(self.playlist, "retract")
+        setRoles(self.portal, TEST_USER_ID, ["Anonymous"])
 
-        view = self.portal.restrictedTraverse('view')
+        view = self.portal.restrictedTraverse("view")
         html = etree.HTML(view())
         a = html.xpath('//a[contains(@class,"playlist-button")]')
         self.assertEqual(len(a), 0)
@@ -71,19 +67,17 @@ class PlaylistFooterViewletTestCase(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        self.request = self.layer['request']
-        setRoles(self.portal, TEST_USER_ID, ['Anonymous'])
+        self.portal = self.layer["portal"]
+        self.request = self.layer["request"]
+        setRoles(self.portal, TEST_USER_ID, ["Anonymous"])
 
-    def get_viewlet_manager(self, context, name='plone.portalfooter'):
+    def get_viewlet_manager(self, context, name="plone.portalfooter"):
         request = self.request
         view = View(context, request)
-        manager = getMultiAdapter(
-            (context, request, view), IViewletManager, name)
+        manager = getMultiAdapter((context, request, view), IViewletManager, name)
         return manager
 
-    def get_viewlet(self, context,
-                    name='collective.playlist.playerfooterviewlet'):
+    def get_viewlet(self, context, name="collective.playlist.playerfooterviewlet"):
         manager = self.get_viewlet_manager(context)
         manager.update()
         viewlet = [v for v in manager.viewlets if v.__name__ == name]
@@ -91,7 +85,7 @@ class PlaylistFooterViewletTestCase(unittest.TestCase):
         return viewlet[0]
 
     def test_footerviewlet(self):
-        view = self.portal.restrictedTraverse('view')
+        view = self.portal.restrictedTraverse("view")
         html = etree.HTML(view())
         player = html.xpath('//div[contains(@id,"jquery_jplayer_playlist")]')
         self.assertEqual(len(player), 1)
