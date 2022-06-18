@@ -7,17 +7,15 @@ from zope.interface import implementer
 
 
 class ITrack(model.Schema):
-    """ Marker interfce and Dexterity Python Schema for Track
-    """
+    """Marker interfce and Dexterity Python Schema for Track"""
 
     audiofile = namedfile.NamedBlobFile(
-        title=_(u'Audio'),
-        description=_(u'mp3, oga, ogg, wav'),
+        title=_("Audio"),
+        description=_("mp3, oga, ogg, wav"),
         required=True,
     )
 
 
 @implementer(ITrack)
 class Track(Item):
-    """
-    """
+    """ """

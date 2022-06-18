@@ -17,34 +17,34 @@ class TrackIntegrationTest(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal = self.layer["portal"]
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
 
     def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='track')
+        fti = queryUtility(IDexterityFTI, name="track")
         schema = fti.lookupSchema()
         self.assertEqual(ITrack, schema)
 
     def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name='track')
+        fti = queryUtility(IDexterityFTI, name="track")
         self.assertTrue(fti)
 
     def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name='track')
+        fti = queryUtility(IDexterityFTI, name="track")
         factory = fti.factory
         obj = createObject(factory)
         self.assertTrue(ITrack.providedBy(obj))
 
     def test_adding(self):
-        setRoles(self.portal, TEST_USER_ID, ['Contributor'])
+        setRoles(self.portal, TEST_USER_ID, ["Contributor"])
         playlist = api.content.create(
             container=self.portal,
-            type='playlist',
-            id='myplaylist',
+            type="playlist",
+            id="myplaylist",
         )
         obj = api.content.create(
             container=playlist,
-            type='track',
-            id='track',
+            type="track",
+            id="track",
         )
         self.assertTrue(ITrack.providedBy(obj))
